@@ -1,0 +1,5 @@
+<view>this is not a test</view>
+<view>
+  <editor id="editor" placeholder="请输入文字或者插入图片" bindready="onEditorReady" ></editor>
+</view>
+<view bindtap="insertImage">点击我插入图片喵</view>

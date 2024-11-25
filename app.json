@@ -1,0 +1,58 @@
+{
+  "pages": [
+    "pages/home/index/index",
+    "pages/home/order/order",
+    "pages/home/user/user",
+    "pages/home/jump_test1/jump_test1",
+    "pages/home/index/index_navigate/qukuaidi/qukuaidi",
+    "pages/home/index/index_navigate/jikuaidi/jikuaidi",
+    "pages/home/index/index_navigate/nawaimai/nawaimai",
+    "pages/home/index/index_navigate/kfc/kfc",
+    "pages/home/index/index_navigate/runleg/runleg",
+    "pages/home/commit_success/comm",
+    "pages/home/commit_success/commit_success",
+    "pages/home/index/index_navigate/mcDonald/mcDonald",
+    "pages/home/runleghelp/runleghelp",
+    "pages/home/test2/test2",
+    "pages/home/rider/rider",
+    "pages/home/user/yonghu/yonghu",
+    "pages/home/rider/rider_info/rider_info",
+    "pages/home/administrator/administrator",
+    "pages/home/administrator/user_temp/user_temp"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarBackgroundColor": "#ffffff"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/rider/rider",
+        "text": "骑手",
+        "iconPath": "/static/tabbar/rider.png",
+        "selectedIconPath": "/static/tabbar/rider-active.png"
+      },
+      {
+        "pagePath": "pages/home/index/index",
+        "text": "首页",
+        "iconPath": "/static/tabbar/home.png",
+        "selectedIconPath": "/static/tabbar/home-active.png"
+      },
+      {
+        "pagePath": "pages/home/user/user",
+        "text": "用户",
+        "iconPath": "/static/tabbar/user.png",
+        "selectedIconPath": "/static/tabbar/user-active.png"
+      }
+    ],
+    "color": "#8a8a8a",
+    "selectedColor": "#fc7519"
+  },
+  "style": "v2",
+  "debug": true,
+  "entryPagePath": "pages/home/index/index",
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

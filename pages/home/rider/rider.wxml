@@ -1,0 +1,62 @@
+<!--pages/home/order/order.wxml-->
+<view class="tabBartop">
+  <text class="tab {{currentTab=='all'?'tab_highlight':''}}" bindtap="changeTab" data-type="all">接单大厅</text>
+  <text class="tab {{currentTab=='done'?'tab_highlight':''}}" bindtap="changeTab" data-type="done">已接单</text>
+</view>
+<scroll-view scroll-y="true" enable-flex="true" class="orderContainer">
+  <view wx:if="{{currentTab === 'all'}}" wx:for="{{orderListall}}" wx:key="index">
+    <view class="orderForm">
+      <view class="basicData">
+        <view class="typeService">{{item.typeService}}</view>
+        <view class="numService">{{item.numService}}</view>
+        <view class="typeDoneyet">{{item.typeDoneyet}}</view>
+      </view>
+      <view class="divider"></view>
+      <view class="startEnd">
+        <view class="desTination">
+          <image class="desImage" src="/static/order_icon/起点.png"></image>
+          <text>{{item.start}}</text>
+        </view>
+        <view class="desTination">
+          <image class="desImage" src="/static/order_icon/终点.png"></image>
+          <text>{{item.end}}</text>
+        </view>
+        <view style="margin-top: 100rpx;"><text>{{item.name}}</text></view>
+        <view><text>{{item.phone}}</text></view>
+      </view>
+      <view class="divider"></view>
+      <view class="buTTons">
+        <text class="buTTon">接单</text>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{currentTab === 'done'}}" wx:for="{{orderListdone}}" wx:key="index">
+    <view class="orderForm">
+      <view class="basicData">
+        <view class="typeService">{{item.typeService}}</view>
+        <view class="numService">{{item.numService}}</view>
+        <view class="typeDoneyet">{{item.typeDoneyet}}</view>
+      </view>
+      <view class="divider"></view>
+      <view class="startEnd">
+        <view class="desTination">
+          <image class="desImage" src="/static/order_icon/起点.png"></image>
+          <text>{{item.start}}</text>
+        </view>
+        <view class="desTination">
+          <image class="desImage" src="/static/order_icon/终点.png"></image>
+          <text>{{item.end}}</text>
+        </view>
+        <view style="margin-top: 100rpx;"><text>{{item.name}}</text></view>
+        <view><text>{{item.phone}}</text></view>
+      </view>
+      <view class="divider"></view>
+      <view class="buTTons">
+        <text class="buTTon">查看</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<view class="fixedButtonContainer">
+  <button class="fixedButton" bindtap="goToNewPage">骑手用户中心</button>
+</view>

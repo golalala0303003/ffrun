@@ -1,0 +1,85 @@
+<view class="container">
+
+  <view class="s1" bindtap="onTapuser">
+    <view class="s1_in">
+      <image class="user_image" src="/static/user_icon/初音未来-大笑.png"> </image>
+      <text class="user_name flex">这是用户名</text>
+      <text class="user_phone flex">18112345678</text>
+    </view>
+  </view>
+  <view class="s2" bindtap="onTapkefu">
+    <image class="kefu"src="/static/user_icon/客服.png"></image>
+  </view>
+  <text class="myaccount">我的账户</text>
+
+</view>
+<view class="container2">
+  <view class="s3">
+
+    <view class="s3_in">
+
+      <view class="s3_mymoney">
+        <text >我的余额</text>
+      </view>
+
+      <view class="s3_money">
+        <text>100元</text>
+      </view>
+
+      <view class="s3_getmoney" bindtap="onTapaddmoney">
+        <text>去充值</text>
+      </view>
+
+    </view>
+
+  </view>
+  <view class="s4">
+    <view class="s3_in">
+      <view class="s3_mymoney">
+        <text >我的卡包</text>
+      </view>
+      <view class="s3_money">
+        <text>1张</text>
+      </view>
+      <view class="s3_getmoney" bindtap="onTapusecard">
+        <text>去使用</text>
+      </view>
+    </view>
+  </view>
+  
+</view>
+<text class="anofunc">其他功能</text>
+<view class="container3">
+<!--  <navigator class="s5" hover-class="none" wx:for="{{mutifunc}}" wx:key="id" url='{{item.url}}' open-type="{{item.openType}}">
+    <view class="s5_in">
+      <image class="s5_image" src="{{item.thumb}}"></image>
+      <text class="s5_text">{{item.name}}</text>
+    </view>
+  </navigator>-->
+  <view class="s5">
+    <view class="s5_in" bindtap="onTapdown">
+      <image class="s5_image" src="/static/icon_index/外卖.png"></image>
+      <text class="s5_text">我的订单</text>
+    </view>
+  </view>
+  <view class="s5">
+    <view class="s5_in" bindtap="onTaploc">
+      <image class="s5_image" src="/static/user_icon/地址.png"></image>
+      <text class="s5_text">更改地址</text>
+    </view>
+  </view>
+  <view class="s5">
+    <view class="s5_in" bindtap="onTapkefu">
+      <image class="s5_image" src="/static/user_icon/客服.png"></image>
+      <text class="s5_text">管理员端</text>
+    </view>
+  </view>
+  <view class="s5">
+    <view class="s5_in" bindtap="onTaphelp">
+      <image class="s5_image" src="/static/user_icon/帮助.png"></image>
+      <text class="s5_text">查看帮助</text>
+    </view>
+  </view>
+  
+
+</view>

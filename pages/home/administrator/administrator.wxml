@@ -1,0 +1,46 @@
+<view class="tabBartop">
+  <text class="tab {{currentTab=='all'?'tab_highlight':''}}" bindtap="changeTab" data-type="all">当前大厅订单</text>
+  <text class="tab {{currentTab=='yetpay'?'tab_highlight':''}}" bindtap="changeTab" data-type="yetpay">当前在线用户</text>
+</view>
+<scroll-view scroll-y="true" enable-flex="true" class="orderContainer">
+  <view wx:if="{{currentTab === 'all'}}" wx:for="{{orderListall}}" wx:key="index">
+    <view class="orderForm">
+      <view class="basicData">
+        <view class="typeService">{{item.typeService}}</view>
+        <view class="numService">{{item.numService}}</view>
+        <view class="typeDoneyet">{{item.typeDoneyet}}</view>
+      </view>
+      <view class="divider"></view>
+      <view class="startEnd">
+        <view class="desTination">
+          <image class="desImage" src="/static/order_icon/起点.png"></image>
+          <text>{{item.start}}</text>
+        </view>
+        <view class="desTination">
+          <image class="desImage" src="/static/order_icon/终点.png"></image>
+          <text>{{item.end}}</text>
+        </view>
+        <view style="margin-top: 100rpx;"><text>{{item.name}}</text></view>
+        <view><text>{{item.phone}}</text></view>
+      </view>
+      <view class="divider"></view>
+      <view class="buTTons">
+        <text class="buTTon">操作1</text>
+        <text class="buTTon">操作2</text>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{currentTab === 'yetpay'}}" wx:for="{{userListall}}" wx:key="index">
+    <view class="orderForm_user">
+      <image class="user_pic_size" src="{{item.user_pic}}"></image>
+      <text>用户名：{{item.user_name}}</text>
+      <text>电话:{{item.telephone}}</text>
+      <text>正在进行订单:{{item.order_tobedone}}</text>
+      <text>已完成订单:{{item.order_done}}</text>
+      <text>平均评分:{{item.avg_star}}</text>
+      <text bindtap="tapuser">查看该用户</text>
+    </view>  
+  </view>
+  
+</scroll-view>

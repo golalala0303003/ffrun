@@ -1,0 +1,30 @@
+/* pages/home/runleghelp/runleghelp.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-bar {
+  display: flex;
+  justify-content: space-around;
+}
+
+.tab {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.tab.active {
+  font-weight: bold;
+  color: blue;
+}
+
+.order-list {
+  flex: 1;
+  overflow-y: scroll;
+}
+
+.order-item {
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+}

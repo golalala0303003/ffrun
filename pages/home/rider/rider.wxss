@@ -1,0 +1,108 @@
+.fixedButtonContainer {
+  position: fixed;
+  bottom: 0rpx; 
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000; 
+}
+.fixedButton {
+  background-color: #00d7fd; 
+  color: rgb(0, 0, 0); 
+  padding: 20rpx 50rpx;
+  border-radius: 30rpx;
+  font-size: 30rpx;
+  box-shadow: 0 5rpx 15rpx rgba(0, 0, 0, 0.2);
+}
+
+
+.tabBartop{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.tab{
+  margin-top: 40rpx;
+  width:130rpx ;
+  height: 60rpx;
+}
+
+.tab_highlight{
+  color: rgb(0, 169, 236);
+}
+
+
+.orderContainer{
+  height: 1170rpx;
+  background-color: rgb(218, 218, 218);
+}
+.orderForm{
+  width: 730rpx;
+  height: 400rpx;
+  margin-top: 20rpx;
+  background: rgb(255, 255, 255);
+  border-top-right-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+}
+
+.basicData{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.typeService{
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+  margin-right: 20rpx;
+  color: rgb(0, 169, 236);
+  border: 2px solid rgb(0, 169, 236); 
+  background-color:rgba(0, 169, 236, 0.089);
+  border-radius: 20rpx;
+  padding: 7rpx; 
+}
+.numService{
+  margin-top: 20rpx;
+}
+.typeDoneyet{
+  margin-left: 60rpx;
+  margin-top: 20rpx;
+  color: rgb(0, 169, 236);
+}
+.divider {
+  height: 1px; 
+  background-color: rgba(0, 0, 0, 0.1); 
+  margin-top: 10rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-bottom: 3rpx;
+}
+
+.startEnd{
+  height: 200rpx;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.desTination{
+  font-size: 35rpx;
+}
+.desImage{
+  width: 80rpx;
+  height: 80rpx;
+}
+.buTTons{
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-end;
+}
+.buTTon{
+  margin-top: 10rpx;
+  margin-right: 25rpx;
+  text-align: center;
+  width: 200rpx;
+  height: 75rpx;
+  line-height: 75rpx;/*上下居中*/
+  background-color: rgb(0, 169, 236);
+  border-radius: 10rpx;
+}

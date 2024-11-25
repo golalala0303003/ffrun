@@ -1,0 +1,64 @@
+/* pages/home/user/yonghu/yonghu.wxss */
+.title{
+  position: absolute;
+  left: 320rpx;
+  font-weight: 700;
+}
+page{
+  background-color: #F5F5F5;
+}
+  .quyu{
+    background-color: #ffffff;
+    position: absolute;
+    left: 75rpx;
+    width: 600rpx;
+    height: 900rpx;
+    border-radius: 25rpx;
+    top: 100rpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+  }
+  /* .xiaozhu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: space-around;
+  } */
+  .nicheng{
+    display: flex;
+    border: 10rpx;
+    border-bottom: 1px solid #dcdcdc;
+    padding: 10rpx;
+    font-size: 30rpx;
+    line-height: 50rpx; /* 可以调整行高 */
+    width: 600rpx;
+    height: 50rpx;
+    justify-content: flex-start;
+  }
+
+  .touxiangk{
+    border: 10rpx;
+    border-bottom: 1px solid #dcdcdc;
+    padding: 10rpx;
+    font-size: 30rpx;
+    line-height: 110rpx; /* 可以调整行高 */
+    width: 550rpx;
+    height: 300rpx;
+  }
+  .imag{
+    width: 300rpx;
+    height: 300rpx;
+    border-radius: 50%; /* 设置圆形效果 */
+    /* object-fit: cover;  保证图片的比例不会被拉伸 */
+  }
+  
+  .nichenginput{
+    width:450rpx;
+    height: 50rpx;
+  }
+  .kongge{
+    width: 150rpx;
+  }

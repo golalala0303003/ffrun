@@ -1,0 +1,127 @@
+.container{
+  background-color: rgb(230, 229, 229);
+  left: 0; top: 0; right: 0;
+  min-height: 100vh;
+}
+.backGroundcolor{
+  position:absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 400rpx;
+  background-color:#FFC60F;
+  z-index: 6;
+}
+.pay_body{
+  position:absolute;
+  background-color: rgb(230, 229, 229);
+  height: 1390rpx;
+  width: 700rpx;
+  top: 30rpx; 
+  left: 50%; /* 水平方向居中 */
+  transform: translate(-50%, 0); /* 使用transform将元素偏移自身宽度和高度的50% */
+  z-index: 100;
+  border-radius: 30rpx;
+}
+
+.pay_item_form_address{
+  width: 700rpx;
+  height: 100rpx;
+  background-color: rgb(255, 255, 255);
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+}
+.pay_item_form_time{
+  width: 700rpx;
+  height: 150rpx;
+  background-color: rgb(255, 255, 255);
+}
+.pay_item_form_code{
+  width: 700rpx;
+  height: 500rpx;
+  background-color: rgb(255, 255, 255);
+}
+.pay_item_form_add{
+  width: 700rpx;
+  height: 200rpx;
+  background-color: rgb(255, 255, 255);
+  border-bottom-right-radius: 30rpx;
+  border-bottom-left-radius: 30rpx;
+}
+
+.pay_item_price{
+  font-size: 30rpx;
+  width: 100rpx;
+}
+.pay_item_form_cost{
+  margin-top: 20rpx;
+  width: 700rpx;
+  height: 250rpx;
+  background-color: rgb(255, 255, 255);
+  border-radius: 30rpx;
+}
+.pay_item_form_cost_line1{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  height: 50rpx;
+}
+.pay_item_cost1{
+  margin-top: 15rpx;
+  margin-left: 30rpx;
+  font-size: 40rpx;
+}
+.pay_item_cost2{
+  margin-top: 15rpx;
+  margin-right: 30rpx;
+  font-size: 40rpx;
+}
+.address_font{
+  font-size: 40rpx;
+}
+.pay_item_font{
+  font-size: 40rpx;
+}
+.pay_item_add{
+  margin-bottom: 60rpx;
+}
+.pay_checkbox{
+  font-size: 35rpx;
+}
+
+.divider {
+  height: 2px; 
+  background-color: rgba(0, 0, 0, 0.1); 
+  margin-top: 25rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  margin-bottom: 3rpx;
+}
+.button_line{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position:absolute;
+  height: 85rpx;
+  width: 750rpx;
+  z-index: 150;
+  bottom: 0;
+  background-color: white;
+}
+.price_form{
+  margin-left: 30rpx;
+  margin-right: 100rpx;
+  margin-top:20rpx;
+  font-size: 35rpx;
+  font-weight: bolder;
+  color: rgb(199, 0, 0);
+}
+.button_form{
+  background-color: rgb(255, 196, 0);
+}
+.textbutton{
+  width: 275rpx;
+  height: 50rpx;
+  background: linear-gradient(135deg, #faf16f 0%, #dad600 100%);
+  border-radius: 30rpx;
+}

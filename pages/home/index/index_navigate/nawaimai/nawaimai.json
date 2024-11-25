@@ -1,0 +1,8 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "代拿外卖",
+  "navigationBarBackgroundColor": "#FFC60F",
+  "navigationBarTextStyle":"white",
+  "backgroundColor": "#FE9900",
+  "enablePullDownRefresh": true
+}

@@ -1,0 +1,9 @@
+@import "/pages/home/index/index_navigate/zr_errand.wxss";
+
+.pay_item_from_image{
+  transform: scale(0.16); 
+  position: absolute;
+  bottom: 880rpx; 
+  left: 5%; 
+  transform: translateX(-50%) scale(0.16);
+}

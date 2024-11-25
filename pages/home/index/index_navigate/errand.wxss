@@ -1,0 +1,63 @@
+.container{position: fixed; left: 0; top: 0; right: 0;bottom: 0;min-height: 100vh; background-color: #f2f2f2;}
+.background{background-color:#FFCC0C; position: absolute; left: 0; top: 0; right: 0; height: 300rpx;z-index: 6;}
+.errand-section{position: absolute; left: 0; top: 0; right: 0;bottom: 0;z-index: 100;}
+.errand-section{width: 750rpx;display: flex;flex-direction: column;align-items: center;}
+.errand-main-section{width: 710rpx; background-color: #FFF;border-radius: 10rpx; padding: 0 40rpx;}
+.errand-main-item{padding: 40rpx 0;}
+.errand-main-item .icon-address{font-size: 36rpx; padding-right: 20rpx;}
+.ico-store{color:var(--baseThemeColor);}
+.ico-home{color: #333;}
+.border-top-line{border-top:1px #e8e8e8 solid;}
+.errand-main-label{align-items: flex-end;}
+.errand-main-label-tip{color: var(--baseThemeColor);font-size: 28rpx;}
+.errand-main-textarea{margin-top: 20rpx; background-color: #f2f2f2; width: 630rpx; padding: 20rpx; box-sizing: border-box;border-radius: 10rpx;font-size: 28rpx;color: #666;}
+.textarea-holder-class{font-size: 28rpx;}
+.errand-main-subtxt{color: #999;}
+.errand-upload-item{width:190rpx; height:190rpx; margin:30rpx 30rpx 0rpx 0;position: relative;}
+.errand-upload-item .errand-upload-thumb{width:190rpx; height:190rpx;border-radius: 10rpx;}
+.errand-upload-item .icon-close{position: absolute; font-size:48rpx; right: -18rpx; top: -30rpx;color: #333;}
+.errand-upload-pic{border:1px #d2d0d0 dashed;border-radius: 10rpx;}
+.errand-upload-item .icon-paizhao{font-size:80rpx;color: #e8e8e8;}
+.errand-upload-item:nth-child(3n){margin-right: 0;}
+.time-select{background-color: #F8F8F8;color: #666; padding:10rpx 20rpx; margin: 20rpx 20rpx 0 0;border-radius: 10rpx;}
+.time-selected{background-color: var(--baseThemeColor);color: #FFF;}
+
+/* tpl-errand */
+.tpl-errand-section{width: 750rpx;display: flex;flex-direction: column;align-items: center;}
+.color-base{color: #FFCC0C;}
+.block{width: 710rpx; background-color: #FFF;padding:0 40rpx; margin-top: 20rpx;border-radius: 10rpx;}
+.errand-title{font-size: 36rpx;}
+.errand-title-section{align-items: flex-end;width: 630rpx; padding: 20rpx 0;}
+.errand-title-desc{font-size: 28rpx;color: #999;}
+.errand-pay-select{background-color: #FFCC0C;color: #FFF;font-size: 32rpx;padding:10rpx 20rpx; border-radius: 10rpx;}
+.errand-service{align-items: flex-start;}
+.icon-wenti{margin-left: 20rpx;color: #e4e4e4;font-size: 36rpx;}
+.padding-b-20{padding-bottom: 20rpx;}
+.errand-item-ext{width: 630rpx;font-size: 32rpx;padding: 20rpx 0;}
+.errand-coupon-section{border-top: 1px #e4e4e4 solid;}
+.errand-coupon-tip{font-size: 28rpx; color: #999; margin-right: 20rpx;}
+.icon-weixinzhifu{color:#43B137; margin-right: 20rpx;font-size:48rpx;}
+.icon-zhengque{color: #FFCC0C;font-size: 36rpx;}
+.errand-agreement-section{width: 710rpx; padding: 40rpx;font-size: 28rpx;}
+.errand-agreement-tip{margin-left: 20rpx;color: #999;}
+.errand-agreement{color: #FFCC0C;}
+
+.footer-bar-blank{height: 100rpx;}
+.footer-bar-section{position: fixed; left: 0; right: 0; bottom: 0; height: 100rpx;background-color: #FFF; padding: 0 20rpx;}
+.errand-price-label{margin-right: 10rpx;}
+.errand-footer-bar-btn{background-color: #FFCC0C;color: #FFF; padding:16rpx 30rpx;color: #FFF;font-size:32rpx;border-radius: 10rpx;}
+
+.fee-section{background-color: #FFF; padding-bottom: 20rpx;}
+.popup-title-section{padding: 20rpx;font-size: 28rpx;border-bottom: 1px #e8e8e8 solid; width: 750rpx;}
+.fee-title{text-align: center;font-size: 32rpx;}
+.popup-item{padding: 20rpx;border-bottom: 1px #e8e8e8 solid;font-size: 28rpx;}
+.popup-item:last-child{border-bottom: none;}
+.fee-cell-price{width: 130rpx;margin-left: 10rpx;}
+
+.tips-list{padding-top: 52.5rpx;}
+.tips-list .active{background-color: #FFCC0C;color: #765429;}
+.tip-item{border:1px #e8e8e8 solid;border-radius: 6rpx; text-align: center;box-sizing: border-box; line-height: 60rpx; width: 180rpx; margin-left: 52.5rpx; margin-bottom: 52.5rpx;}
+.fee-placeholder{color: #999;}
+.fee-other{color: #333;border:1px #e8e8e8 solid; width: 645rpx;height: 90rpx;border-radius: 6rpx; text-align: center; padding: 20rpx 10rpx;}
+.fee-focus{border-color: #FFCC0C;color: #FFCC0C;}
+.fee-list-section{height: 500rpx;}

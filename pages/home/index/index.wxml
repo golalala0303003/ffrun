@@ -1,0 +1,30 @@
+<!--pages/home/index/index.wxml-->
+<view>
+  <text class="tpf-nav-bar-bg-color"></text>
+  <view style="display: flex; justify-content: space-between; align-items: center;" class="top_text">
+    <text class="zr-iconfont icon-dingwei">{{message}}</text>
+    <text class="zr-iconfont icon-qishou" style="margin-left: auto;">目前有{{nums_rider}}个骑手</text>
+  </view>
+
+  <swiper class="bannner " circular="True" autoplay="True" interval="3000" indicator-dots="True" indicator-color="#FE9900" indicator-active-color="#5DE2E7" previous-margin="50rpx" next-margin="50rpx" bindchange="bindchange" current="{{currentIndex}}">
+    <swiper-item wx:for="{{banners}}"  wx:key="id">
+      <image src="{{item.src}}" class="{{currentIndex==index?'active':''}}"></image>
+      <text>{{index}}</text>
+    </swiper-item>
+  </swiper>
+</view>
+
+<view  class="container ">
+  <block wx:for="{{index_item}}" wx:key="index">
+    <view class="item" bindtap="onItemTap" data-url="{{item.url}}">
+      <image class="item-image" src="{{item.image}}" mode="aspectFill"></image>
+      <text class="item-text">{{item.text}}</text>
+    </view>
+  </block>
+</view>
+<!--<text class="test_shadow">
+  站在圣光面前的人……必将投下暗影。
+</text>-->
+<view class="test1" bindtap="tapTocall">
+  <image src="/static/index/yqyl.jpg" mode="widthFix"></image>
+</view>

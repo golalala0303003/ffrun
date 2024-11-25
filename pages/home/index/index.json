@@ -1,0 +1,8 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "欢迎来到跑腿小程序",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle":"black",
+  "backgroundColor": "#FFFFFF",
+  "enablePullDownRefresh": true
+}

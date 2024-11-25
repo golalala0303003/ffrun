@@ -1,0 +1,47 @@
+<view class="container">
+
+<view class="s1" bindtap="onTapuser">
+  <view class="s1_in">
+    <image class="user_image" src="/static/user_icon/初音未来-大笑.png"> </image>
+    <text class="user_name flex">这是用户名</text>
+    <text class="user_phone flex">18112345678</text>
+  </view>
+</view>
+<view class="s2" bindtap="onTapkefu">
+  <image class="kefu"src="/static/user_icon/客服.png"></image>
+</view>
+<text class="myaccount">我的账户</text>
+
+</view>
+<view class="container2">
+<view class="s3">
+
+  <view class="s3_in">
+
+    <view class="s3_mymoney">
+      <text >已赚佣金</text>
+    </view>
+
+    <view class="s3_money">
+      <text>1000元</text>
+    </view>
+
+    <view class="s3_getmoney" bindtap="onTapaddmoney">
+      <text>去提现</text>
+    </view>
+
+  </view>
+
+</view>
+
+
+</view>
+<text class="anofunc">其他功能</text>
+<view class="container3">
+  <view class="s5">
+    <view class="s5_in" bindtap="onTapdown">
+      <image class="s5_image" src="/static/icon_index/外卖.png"></image>
+      <text class="s5_text">我的订单</text>
+    </view>
+  </view>
+</view>

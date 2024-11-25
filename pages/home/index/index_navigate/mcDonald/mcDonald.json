@@ -1,0 +1,8 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "麦当劳代取",
+  "navigationBarBackgroundColor": "#FFC60F",
+  "navigationBarTextStyle":"white",
+  "backgroundColor": "#FE9900",
+  "enablePullDownRefresh": true
+}
