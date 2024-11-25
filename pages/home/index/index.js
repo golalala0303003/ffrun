@@ -37,6 +37,14 @@ Page({
 
   myFunction(){
     this.setData(   { message:"福州大学旗山校区" }    );
+    wx.request({
+      url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/user/user/1',
+      success:(res)=>{
+        console.log(res.data.data.account);
+        this.setData({nums_rider:res.data.data.account});
+      }
+      
+    });
   },
 
   bindchange(e){
@@ -53,6 +61,21 @@ Page({
    */
   onLoad(options) {
     this.myFunction();
+    console.log("页面正在加载，准备登录");
+    wx.login({
+      success: (res) => {
+        if(res.code){
+          console.log(res);
+          wx.setStorageSync('user_code', res.code);
+        }
+        else{
+          console.log("登录失败");
+        }
+      },
+    })
+    const getid = wx.getStorageSync('user_code');
+    console.log("这是我们get到的id",getid);
+    
 
   },
 
@@ -60,7 +83,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-
+    
   },
 
   /**

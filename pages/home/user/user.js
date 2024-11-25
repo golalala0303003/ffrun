@@ -26,6 +26,9 @@ Page({
   },
   onTapaddmoney:function(event){
     console.log("someone tap 充值");
+    wx.navigateTo({
+      url: '/pages/home/user/addcredit/addcredit',
+    })
   },
   onTapusecard:function(event){
     console.log("someone tap 使用");

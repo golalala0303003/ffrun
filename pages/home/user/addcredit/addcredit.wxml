@@ -1,0 +1,10 @@
+<!--pages/home/user/addcredit/addcredit.wxml-->
+<view>现在开始充值</view>
+<form catchsubmit='formSubmit'>
+  <view class="divider"></view>
+  <view>
+    <input name="input" placeholder="请输入要充值的金额"/>
+  </view>
+  <view class="divider"></view>
+  <button formType="submit">点击充值</button>
+</form>

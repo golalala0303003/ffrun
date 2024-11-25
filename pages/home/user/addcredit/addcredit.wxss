@@ -1,0 +1,9 @@
+/* pages/home/user/addcredit/addcredit.wxss */
+.divider {
+  height: 1px; 
+  background-color: rgba(0, 0, 0, 0.1); 
+  margin-top: 10rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-bottom: 3rpx;
+}
