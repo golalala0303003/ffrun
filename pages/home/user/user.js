@@ -22,6 +22,11 @@ Page({
       url: '/pages/home/user/yonghu/yonghu',
     })
   },
+  onTapadmin:function(event){
+    wx.navigateTo({
+      url: '/pages/home/administrator/administrator',
+    })
+  },
   onTapkefu:function(event){
     console.log("someone tap 拨打客服电话");
     wx.makePhoneCall({

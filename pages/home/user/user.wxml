@@ -69,7 +69,7 @@
     </view>
   </view>
   <view class="s5">
-    <view class="s5_in" bindtap="onTapkefu">
+    <view class="s5_in" bindtap="onTapadmin">
       <image class="s5_image" src="/static/user_icon/客服.png"></image>
       <text class="s5_text">管理员端</text>
     </view>
