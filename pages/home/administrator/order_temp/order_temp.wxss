@@ -22,7 +22,7 @@
 }
 .orderForm{
   width: 730rpx;
-  height: 550rpx;
+  height: 400rpx;
   margin-top: 20rpx;
   background: rgb(255, 255, 255);
   border-top-right-radius: 30rpx;
@@ -62,7 +62,7 @@
 }
 
 .startEnd{
-  height: 1500rpx;
+  height: 700rpx;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;

@@ -23,7 +23,8 @@
     "pages/home/order/order_detail/order_detail",
     "pages/home/user/ticket/ticket",
     "pages/home/user/address/address",
-    "pages/home/rider/Order_detail/Order_detail"
+    "pages/home/rider/Order_detail/Order_detail",
+    "pages/home/administrator/order_temp/order_temp"
   ],
   "window": {
     "navigationBarTextStyle": "black",

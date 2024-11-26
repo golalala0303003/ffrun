@@ -7,40 +7,49 @@
     <view class="orderForm">
       <view class="basicData">
         <view class="typeService">{{item.typeService}}</view>
-        <view class="numService">{{item.numService}}</view>
-        <view class="typeDoneyet">{{item.typeDoneyet}}</view>
+        <view class="numService">{{item.orderId}}</view>
+        <view class="typeDoneyet">
+        <text wx:if="{{item.status === 0}}">待接单</text>
+        <text wx:elif="{{item.status === 1}}">进行中</text>
+        <text wx:else="{{item.status === 2}}">已完成</text></view>
       </view>
       <view class="divider"></view>
       <view class="startEnd">
         <view class="desTination">
-          <image class="desImage" src="/static/order_icon/起点.png"></image>
-          <text>{{item.start}}</text>
-        </view>
-        <view class="desTination">
           <image class="desImage" src="/static/order_icon/终点.png"></image>
-          <text>{{item.end}}</text>
+          <text>{{item.deliveryAddress}}</text>
         </view>
-        <view style="margin-top: 100rpx;"><text>{{item.name}}</text></view>
-        <view><text>{{item.phone}}</text></view>
+        <view class="block"><text>配送时间:{{item.deliveryTime}}</text></view>
+        <view class="block"><text>骑手ID:{{item.riderId}}</text></view>
       </view>
       <view class="divider"></view>
       <view class="buTTons">
-        <text class="buTTon">操作1</text>
-        <text class="buTTon">操作2</text>
+        <text class="buTTon" bind:tap="checkod" data-order_id="{{item.orderId}}">查询</text>
       </view>
     </view>
   </view>
 
   <view wx:if="{{currentTab === 'yetpay'}}" wx:for="{{userListall}}" wx:key="index">
-    <view class="orderForm_user">
-      <image class="user_pic_size" src="{{item.user_pic}}"></image>
-      <text>用户名：{{item.user_name}}</text>
-      <text>电话:{{item.telephone}}</text>
-      <text>正在进行订单:{{item.order_tobedone}}</text>
-      <text>已完成订单:{{item.order_done}}</text>
-      <text>平均评分:{{item.avg_star}}</text>
-      <text bindtap="tapuser">查看该用户</text>
-    </view>  
+    <view class="orderForm">
+      <view class="basicData">
+        <view class="typeService">{{item.userId}}</view>
+        <view class="numService">{{item.username}}</view>
+        <view class="typeDoneyet">{{item.userStar}}</view>
+      </view>
+      <view class="divider"></view>
+      <view class="startEnd">
+        <view class="desTination">
+          <image class="desImage" src="/static/order_icon/起点.png"></image> <text>{{item.deliveryAddress}}</text>
+        </view>
+        <view class="block"><text>用户地址:{{item.userAddress}}</text></view>
+        <view class="block"><text>用户余额:{{item.account}}</text></view>
+        <view class="block"><text>用户电话:{{item.account}}</text></view>
+      </view>
+      <view class="divider"></view>
+      <view class="buTTons">
+        <text class="buTTon" bind:tap="checkus" data-userId="{{item.user_id}}">查询</text>
+      </view>
+    </view>
   </view>
   
 </scroll-view>

@@ -1,3 +1,4 @@
+/* pages/home/order/order.wxss */
 .tabBartop{
   display: flex;
   flex-direction: row;
@@ -21,33 +22,17 @@
 }
 .orderForm{
   width: 730rpx;
-  height: 400rpx;
+  height: 600rpx;
   margin-top: 20rpx;
   background: rgb(255, 255, 255);
   border-top-right-radius: 30rpx;
   border-bottom-right-radius: 30rpx;
-}
-.orderForm_user{
-  width: 730rpx;
-  height: 150rpx;
-  margin-top: 20rpx;
-  background: rgb(255, 255, 255);
-  border-top-right-radius: 30rpx;
-  border-bottom-right-radius: 30rpx;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  flex-wrap: wrap;
 }
 
-.user_pic_size{
-  width: 100rpx;
-  height: 100rpx;
-}
 .basicData{
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-around;
 }
 .typeService{
   margin-top: 10rpx;
@@ -59,7 +44,7 @@
   border-radius: 20rpx;
   padding: 7rpx; 
 }
-.numService{
+.order_id{
   margin-top: 20rpx;
 }
 .typeDoneyet{
@@ -77,14 +62,15 @@
 }
 
 .startEnd{
-  height: 200rpx;
+  height: 350rpx;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-start;
 }
 .desTination{
-  font-size: 35rpx;
+  height: 100rpx;
+  font-size: 30rpx;
 }
 .desImage{
   width: 80rpx;
@@ -93,7 +79,7 @@
 .buTTons{
   display: flex;
   flex-direction: row;
-  justify-content:flex-end;
+  justify-content:space-around;
 }
 .buTTon{
   margin-top: 10rpx;
@@ -104,4 +90,22 @@
   line-height: 75rpx;/*上下居中*/
   background-color: orange;
   border-radius: 10rpx;
+}
+
+.block{
+  height: 80rpx;
+  font-size: 30rpx;
+  margin-top: 40rpx;
+  margin-left: 80rpx;
+}
+.broky{
+  height: 80rpx;
+  font-size: 30rpx;
+  margin-top: 140rpx;
+}
+.bok{
+  height: 80rpx;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+  margin-left: 80rpx;
 }

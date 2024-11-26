@@ -1,4 +1,5 @@
 // pages/home/administrator/administrator.js
+import test from '../../../data/test/test'
 Page({
 
   /**
@@ -6,22 +7,9 @@ Page({
    */
   data: {
     currentTab: "all",
-    orderListall:[
-      {typeService:"代寄快递",numService:"123456789123456789",typeDoneyet:"已完成",start:"福师大",end:"衡水中学",name:"小王",phone:"18111111111"},
-      {typeService:"智能跑腿",numService:"912345678912345678",typeDoneyet:"未完成",start:"福州十六中",end:"福州大学",name:"张三",phone:"12345678965"},
-      {typeService:"拿麦当劳",numService:"912345678912345678",typeDoneyet:"已完成",start:"地点1",end:"地点2",name:"李四",phone:"12345678965"},
-      {typeService:"智能跑腿",numService:"912345678912345678",typeDoneyet:"未完成",start:"福州十六中",end:"福州大学",name:"张三",phone:"12345678965"},
-      {typeService:"智能跑腿",numService:"912345678912345678",typeDoneyet:"未完成",start:"福州十六中",end:"福州大学",name:"张三",phone:"12345678965"},
-    ],
-    userListall:[
-      {user_pic:"/static/user_icon/初音未来-大笑.png",user_name:"小明",telephone:"11111111111",order_tobedone:"2",order_done:"100",avg_star:"5"},
-      {user_pic:"/static/user_icon/初音未来-大笑.png",user_name:"小明",telephone:"11111111111",order_tobedone:"2",order_done:"100",avg_star:"5"},
-      {user_pic:"/static/user_icon/初音未来-大笑.png",user_name:"小明",telephone:"11111111111",order_tobedone:"2",order_done:"100",avg_star:"5"},
-      {user_pic:"/static/user_icon/初音未来-大笑.png",user_name:"小明",telephone:"11111111111",order_tobedone:"2",order_done:"100",avg_star:"5"},
-      {user_pic:"/static/user_icon/初音未来-大笑.png",user_name:"小明",telephone:"11111111111",order_tobedone:"2",order_done:"100",avg_star:"5"},
-      {user_pic:"/static/user_icon/初音未来-大笑.png",user_name:"小明",telephone:"11111111111",order_tobedone:"2",order_done:"100",avg_star:"5"},
-      {user_pic:"/static/user_icon/初音未来-大笑.png",user_name:"小明",telephone:"11111111111",order_tobedone:"2",order_done:"100",avg_star:"5"},
-    ]
+    orderListall:[],
+    userListall:[],
+    selectedItem: null,
   },
   tapuser:function(){
     wx.navigateTo({
@@ -53,32 +41,37 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    wx.request({
-      url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/admin/user',
-      method:'GET',
-      success(res){
-        if(res.statusCode===200){
-          console.log("成功测试");
-          console.log(res);
-        }
-        else{
-          console.log("测试失败");
-        }
-      }
-    });
+    let that=this;
     wx.request({
       url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/admin/order',
-      method:'GET',
       success(res){
         if(res.statusCode===200){
-          console.log("第二个成功测试");
-          console.log(res.data.data);
+          console.log("订单测试成功"),
+          console.log(res.data.data),
+          that.setData({
+            orderListall:res.data.data
+          })
+          }
+          else
+          console.log("订单测试失败")
         }
-        else{
-          console.log("第二个测试失败");
+    }),
+
+    wx.request({
+      url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/admin/user',
+      success(res){
+        if(res.statusCode===200){
+          console.log("用户测试成功"),
+          console.log(res.data),
+          that.setData({
+            userListall:res.data
+          })
+          }
+          else
+          console.log("用户测试失败")
         }
-      }
     })
+
   },
 
   /**
@@ -99,6 +92,36 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
+    let that=this;
+    wx.request({
+      url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/admin/order',
+      success(res){
+        if(res.statusCode===200){
+          console.log("订单测试成功"),
+          console.log(res.data.data),
+          that.setData({
+            orderListall:res.data.data
+          })
+          }
+          else
+          console.log("订单测试失败")
+        }
+    }),
+
+    wx.request({
+      url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/admin/user',
+      success(res){
+        if(res.statusCode===200){
+          console.log("用户测试成功"),
+          console.log(res.data),
+          that.setData({
+            userListall:res.data
+          })
+          }
+          else
+          console.log("用户测试失败")
+        }
+    })
 
   },
 
@@ -114,5 +137,36 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+
+  checkod: function(e) {
+    const orderId = e.currentTarget.dataset.orderId;
+    const item = this.data.orderListall.find(i => i.order_id === orderId);
+    if (item) { // 确保找到了项
+      this.setData({
+        selectedItem: item
+      });
+      wx.navigateTo({
+        url: `/pages/home/administrator/order_temp/order_temp?item=${encodeURIComponent(JSON.stringify(item))}`
+      });
+    } else {
+      console.log('未找到对应的订单项');
+    }
+  },
+
+  checkus: function(e) {
+    const userId = e.currentTarget.dataset.userId;
+    const item = this.data.userListall.find(i => i.user_id === userId);
+    if (item) { // 确保找到了项
+      this.setData({
+        selectedItem: item
+      });
+      wx.navigateTo({
+        url: `/pages/home/administrator/user_temp/user_temp?item=${encodeURIComponent(JSON.stringify(item))}`
+      });
+    } else {
+      console.log('未找到对应的订单项');
+    }
   }
+
 })

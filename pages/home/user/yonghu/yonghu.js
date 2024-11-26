@@ -70,8 +70,11 @@ Page({
       },
       success(res){
         if(res.statusCode===200){
-          console.log("注册/更新数据成功");
+          console.log("注册/更新数据成功------------------------------------------------------");
           that.get_userinfo();
+          wx.switchTab({
+            url: '/pages/home/index/index',
+          })
         }
         else{
           console.log("注册/更新数据失败");
