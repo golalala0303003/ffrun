@@ -3,11 +3,11 @@
   <form catchsubmit="formSubmit" catchreset="formReset">
     <scroll-view class="pay_body" scroll-y="true" enable-flex="true" >
       <view class="pay_item_form_address">
-        <picker name="addresspick" bindchange="bindPickerChange" value="{{address_index}}" range="{{address_array}}">
+
           <view class="address_font">
             选择地址：{{address_array}} 
           </view>
-        </picker>
+
         <view class="divider"></view>
       </view>
 
@@ -24,7 +24,7 @@
         <view>
           <editor id="editor" placeholder="请输入文字或者插入图片" bindready="onEditorReady" ></editor>
         </view>
-        <view class="textbutton" bindtap="insertImage">点击我插入图片喵</view>
+        <view class="textbutton" bindtap="insertImage">点击我插入图片</view>
         <view class="divider"></view>
       </view>
 

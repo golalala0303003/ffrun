@@ -92,7 +92,7 @@ Page({
       url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/user/order',
       method:'POST',
       data:{
-        typeService:"代取快递",
+        typeService:"代寄快递",
         userId:temp_id,
         description:this.data.description,
         deliveryAddress:temp_address.userAddress,

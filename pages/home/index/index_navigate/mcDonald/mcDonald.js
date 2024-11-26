@@ -1,4 +1,5 @@
-// pages/home/index/index_navigate/mcDonald/mcDonald.js
+// pages/home/index/index_navigate/qukuaidi/qukuaidi.js
+
 Page({
 
   /**
@@ -17,23 +18,21 @@ Page({
       '8',
       '9'
     ],
-    coupons_array:[
-      '不用优惠券',
-      '-5',
-      '-10',
-      '-15',
-      '-20'
-    ],
-    address_array:[
-      '翻斗花园',
-      '下北泽',
-      'de_dust2',
-      '111'
-    ],
+    basiccost:25,
+    totalcost:0,
+
+    coupons_array:[],
+    address_array:[],
+    
     address_index:0,
     coupons_index:0,
     tip_index:0,
-    finalPrice:0
+    finalPrice:0,
+
+    deliverTime:"",
+    description:"",
+    couponspick:0,
+    tipspick:0
   },
   onEditorReady(){
     console.log("editor is ready!")
@@ -88,8 +87,38 @@ Page({
     })
   },
 
+  create_order(){
+    let temp_id=wx.getStorageSync('user_id');
+    let temp_address=wx.getStorageSync('user_info');
+    wx.request({
+      url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/user/order',
+      method:'POST',
+      data:{
+        typeService:"代取麦当劳",
+        userId:temp_id,
+        description:this.data.description,
+        deliveryAddress:temp_address.userAddress,
+        deliveryTime:this.data.deliverTime
+      },
+      success(res){
+        if(res.statusCode===200){
+          console.log("订单提交成功",res);
+        }
+      }
+    })
+  },
+
   formSubmit(e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
+    this.setData({
+      deliverTime:e.detail.value.deliverTime,
+      description:e.detail.value.add,
+      couponspick:e.detail.value.couponspick,
+      tipspick:e.detail.value.tipspick
+    });
+    console.log("开始提交订单");
+    //console.log("这是订单信息：",this.data.deliverTime,this.data.description);
+    this.create_order();
     /*wx.navigateTo({
       url: '/pages/home/commit_success/commit_success',
     })*/
@@ -113,10 +142,30 @@ Page({
 
   },
 
+
+  load_address(){
+    console.log("正在加载用户地址");
+    let temp_info=wx.getStorageSync('user_info');
+    this.setData({
+      address_array:temp_info.userAddress
+    });
+    console.log("加载完成,用户地址为",this.data.address_array);
+  },
+  load_coupons(){
+    console.log("正在加载用户优惠券");
+    let temp_info=wx.getStorageSync('user_info');
+    this.setData({
+      coupons_array:temp_info.tickets
+    });
+    console.log("加载完成,用户优惠券为",this.data.coupons_array);
+  },
+
   /**
    * 生命周期函数--监听页面显示
    */
   onShow() {
+    this.load_address();
+    this.load_coupons();
 
   },
 
