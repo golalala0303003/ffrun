@@ -46,7 +46,7 @@ Page({
         this.setData({
           orderListall:data.data,
         });
-        console.log("我们成功定义了信息：",this.data.list);
+        console.log("我们成功定义了信息：",this.data.orderListall);
       }
     );
   },

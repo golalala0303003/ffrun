@@ -1,0 +1,10 @@
+<!--pages/home/user/address/address.wxml-->
+<view>现在开始更改地址</view>
+<form catchsubmit='formSubmit'>
+  <view class="divider"></view>
+  <view>
+    <input name="input" placeholder="请输入要更改的地址"/>
+  </view>
+  <view class="divider"></view>
+  <button formType="submit">点击更改地址</button>
+</form>

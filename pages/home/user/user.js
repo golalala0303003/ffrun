@@ -23,9 +23,9 @@ Page({
     })
   },
   onTapkefu:function(event){
-    console.log("someone tap 进入管理员端");
-    wx.navigateTo({
-      url: '/pages/home/administrator/administrator',
+    console.log("someone tap 拨打客服电话");
+    wx.makePhoneCall({
+      phoneNumber: '123456789',
     })
   },
   onTapaddmoney:function(event){
@@ -35,10 +35,16 @@ Page({
     })
   },
   onTapusecard:function(event){
-    console.log("someone tap 使用");
+    console.log("someone tap 查看卡包");
+    wx.navigateTo({
+      url: '/pages/home/user/ticket/ticket',
+    })
   },
   onTaploc:function(event){
     console.log("someone tap 更改地址");
+    wx.navigateTo({
+      url: '/pages/home/user/address/address',
+    })
   },
   onTaphelp:function(event){
     console.log("someone tap 查看帮助");

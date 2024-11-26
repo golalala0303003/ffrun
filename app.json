@@ -20,7 +20,9 @@
     "pages/home/administrator/administrator",
     "pages/home/administrator/user_temp/user_temp",
     "pages/home/user/addcredit/addcredit",
-    "pages/home/order/order_detail/order_detail"
+    "pages/home/order/order_detail/order_detail",
+    "pages/home/user/ticket/ticket",
+    "pages/home/user/address/address"
   ],
   "window": {
     "navigationBarTextStyle": "black",

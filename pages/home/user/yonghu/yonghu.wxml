@@ -1,16 +1,28 @@
 <!--pages/home/user/yonghu/yonghu.wxml-->
-<view class="title">
-<text>编辑信息</text>
-</view>
-<view class="quyu">
-<view class="touxiangk">头像<image class="imag" src="/static/user_icon/初音未来-大笑.png"/>
-</view>
-<view class="nicheng"><text class="kongge">昵称</text><editor id="editor" placeholder="请输入昵称" bindready="onEditorReady" ></editor>
-</view>
-<view class="nicheng"><text class="kongge">电话</text><editor id="editor" placeholder="请输入电话" bindready="onEditorReady1" ></editor>
-</view>
-<picker name="sexpick" bindchange="bindPickerChange" value="{{sex_index}}" range="{{sex_array}}">
-<view class="nicheng">
-            性别：{{sex_array[sex_index]}} 
-          </view></picker>
-</view>
+<form catchsubmit='formSubmit'>
+  <view class="title">
+    <text>编辑信息</text>
+  </view>
+  <view class="quyu">
+    <view class="touxiangk">头像<image class="imag" src="/static/user_icon/初音未来-大笑.png"/>
+  </view>
+  <view class="nicheng">
+    <text class="kongge">昵称</text>
+    <input name="user_name"  placeholder="请输入昵称"  />
+  </view>
+  <view class="nicheng">
+    <text class="kongge">电话</text>
+    <input name="user_phone"  placeholder="请输入电话" />
+  </view>
+  <view class="nicheng">
+    <text class="kongge">地址</text>
+    <input name="user_address"  placeholder="请输入地址" />
+  </view>
+  <picker name="sexpick" bindchange="bindPickerChange" value="{{sex_index}}" range="{{sex_array}}">
+    <view class="nicheng">
+      性别：{{sex_array[sex_index]}} 
+    </view>
+  </picker>
+  </view>
+  <button formType="submit">点击注册</button>
+</form>
