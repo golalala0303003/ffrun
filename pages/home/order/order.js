@@ -1,37 +1,16 @@
 // pages/home/order/order.js
+import test from '../../../data/test/test'
 Page({
+  
 
   /**
    * 页面的初始数据
    */
   data: {
     currentTab:"all",
-    orderListall:[
-      {typeService:"代寄快递",numService:"123456789123456789",typeDoneyet:"已完成",start:"福师大",end:"衡水中学",name:"小王",phone:"18111111111"},
-      {typeService:"智能跑腿",numService:"912345678912345678",typeDoneyet:"未完成",start:"福州十六中",end:"福州大学",name:"张三",phone:"12345678965"},
-      {typeService:"拿麦当劳",numService:"912345678912345678",typeDoneyet:"已完成",start:"地点1",end:"地点2",name:"李四",phone:"12345678965"},
-      {typeService:"智能跑腿",numService:"912345678912345678",typeDoneyet:"未完成",start:"福州十六中",end:"福州大学",name:"张三",phone:"12345678965"},
-      {typeService:"智能跑腿",numService:"912345678912345678",typeDoneyet:"未完成",start:"福州十六中",end:"福州大学",name:"张三",phone:"12345678965"},
-    ],
-    orderListyetpay:[
-      {typeService:"代寄快递",numService:"123456789123456789",typeDoneyet:"已完成",start:"霍格沃兹",end:"衡水中学",name:"王小桃",phone:"18111111111"},
-      {typeService:"智能跑腿",numService:"912345678912345678",typeDoneyet:"未完成",start:"福州十六中",end:"福州大学",name:"张三",phone:"12345678965"},
-    ],
-    orderListyetget:[
-      {typeService:"代寄快递",numService:"123456789123456789",typeDoneyet:"已完成",start:"霍格沃兹",end:"衡水中学",name:"王小桃",phone:"18111111111"},
-    ],
-    orderListalpay:[
-      {typeService:"智能跑腿",numService:"912345678912345678",typeDoneyet:"未完成",start:"福州十六中",end:"福州大学",name:"张三",phone:"12345678965"},
-      {typeService:"智能跑腿",numService:"912345678912345678",typeDoneyet:"未完成",start:"福州十六中",end:"福州大学",name:"张三",phone:"12345678965"},
-      {typeService:"智能跑腿",numService:"912345678912345678",typeDoneyet:"未完成",start:"福州十六中",end:"福州大学",name:"张三",phone:"12345678965"},
-    ],
-    orderListdone:[
-      {typeService:"智能跑腿",numService:"912345678912345678",typeDoneyet:"未完成",start:"福州十六中",end:"福州大学",name:"张三",phone:"12345678965"},
-      {typeService:"智能跑腿",numService:"912345678912345678",typeDoneyet:"未完成",start:"福州十六中",end:"福州大学",name:"张三",phone:"12345678965"},
-      {typeService:"智能跑腿",numService:"912345678912345678",typeDoneyet:"未完成",start:"福州十六中",end:"福州大学",name:"张三",phone:"12345678965"},
-      {typeService:"智能跑腿",numService:"912345678912345678",typeDoneyet:"未完成",start:"福州十六中",end:"福州大学",name:"张三",phone:"12345678965"},
-      {typeService:"智能跑腿",numService:"912345678912345678",typeDoneyet:"未完成",start:"福州十六中",end:"福州大学",name:"张三",phone:"12345678965"},
-    ]
+    orderListall:[],
+    selectedItem: null
+    
   },
   changeTab: function (e) {
     const type = e.currentTarget.dataset.type;
@@ -45,9 +24,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    
   },
 
+  
+  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -59,7 +40,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    test.getorder(
+      (data)=>{
+        console.log(data.data);
+        this.setData({
+          orderListall:data.data,
+        });
+        console.log("我们成功定义了信息：",this.data.list);
+      }
+    );
   },
 
   /**
@@ -80,7 +69,15 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-
+    test.getorder(
+      (data)=>{
+        console.log(data.data);
+        this.setData({
+          orderListall:data.data,
+        });
+        console.log("我们成功定义了信息：",this.data.list);
+      }
+    );
   },
 
   /**
@@ -95,5 +92,20 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+
+  jmpOD: function(e) {
+    const order_id = e.currentTarget.dataset.order_id;
+    const item = this.data.orderListall.find(i => i.order_id === order_id);
+    if (item) { // 确保找到了项
+      this.setData({
+        selectedItem: item
+      });
+      wx.navigateTo({
+        url: `/pages/home/order/order_detail/order_detail?item=${encodeURIComponent(JSON.stringify(item))}`
+      });
+    } else {
+      console.log('未找到对应的订单项');
+    }
   }
 })

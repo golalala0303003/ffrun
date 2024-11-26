@@ -5,6 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+    user_name:"",
+    user_phone:"",
+    user_account:0,
+    user_ticket:0,
     mutifunc:[
       {id:1,name:"更改地址",thumb:'/static/user_icon/地址.png',url:'/pages/home/jump_test1/jump_test1',openType:'navigate'},
       {id:2,name:"呼叫客服",thumb:'/static/user_icon/客服.png',url:'/pages/home/index/index_navigate/qukuaidi/qukuaidi',openType:'navigate'},
@@ -62,11 +66,19 @@ Page({
 
   },
 
+  loadinfo(){
+    this.setData({
+      user_name:wx.getStorageSync('user_info').username,
+      user_phone:wx.getStorageSync('user_info').phone,
+      user_account:wx.getStorageSync('user_info').account,
+      user_ticket:wx.getStorageSync('user_info').tickets.length
+    });
+  },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.loadinfo();
   },
 
   /**

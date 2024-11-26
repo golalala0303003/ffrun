@@ -23,6 +23,7 @@ Page({
 
     coupons_array:[],
     address_array:[],
+    
     address_index:0,
     coupons_index:0,
     tip_index:0,

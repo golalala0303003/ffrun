@@ -19,7 +19,8 @@
     "pages/home/rider/rider_info/rider_info",
     "pages/home/administrator/administrator",
     "pages/home/administrator/user_temp/user_temp",
-    "pages/home/user/addcredit/addcredit"
+    "pages/home/user/addcredit/addcredit",
+    "pages/home/order/order_detail/order_detail"
   ],
   "window": {
     "navigationBarTextStyle": "black",

@@ -1,0 +1,22 @@
+<!--pages/home/order/order_detail/order_detail.wxml-->
+<view class="orderContainer">
+  <view class="orderForm">
+    <view class="basicData">
+        <view class="typeService">{{selectedItem.type_service}}</view>
+        <view class="order_id">{{selectedItem.order_id}}</view>
+        <view class="typeDoneyet">{{selectedItem.status}}</view>
+      </view>
+      <view class="divider"></view>
+      <view class="startEnd">
+        <view class="desTination">
+          <image class="desImage" src="/static/order_icon/终点.png"></image>
+          <text>{{selectedItem.delivery_address}}</text>
+        </view>
+        <view class="block"><text>配送时间:{{selectedItem.delivery_time}}</text></view>
+        <view class="block"><text>骑手ID:{{selectedItem.rider_id}}</text></view>
+        <view class="block"><text>用户ID:{{selectedItem.user_id}}</text></view>
+        <view class="block"><text>评价:{{selectedItem.order_star}}</text></view>
+        <view class="bok"><text>备注:{{selectedItem.description}}</text></view>
+      </view>
+  </view>
+</view>
