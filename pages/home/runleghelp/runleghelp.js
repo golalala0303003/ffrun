@@ -7,14 +7,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    test.getlist(
-      (data)=>{
-        this.setData({
-          list:data
-        });
-        console.log("我们成功定义了信息：",this.data.list);
-      }
-    );
+   
   },
 
   /**

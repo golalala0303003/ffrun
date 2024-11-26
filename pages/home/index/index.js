@@ -107,7 +107,21 @@ Page({
   onLoad(options) {
     console.log("现在准备登录");
     this.loginFunction();
+    wx.showModal({
+      title: '首次登录用户请注册',
+      content: '点击确定注册',
+      complete: (res) => {
+        if (res.cancel) {
+          
+        }
     
+        if (res.confirm) {
+          wx.navigateTo({
+            url: '/pages/home/user/yonghu/yonghu'
+          })
+        }
+      }
+    })
   },
 
   /**

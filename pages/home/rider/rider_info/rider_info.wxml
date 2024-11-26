@@ -3,8 +3,8 @@
 <view class="s1" bindtap="onTapuser">
   <view class="s1_in">
     <image class="user_image" src="/static/user_icon/初音未来-大笑.png"> </image>
-    <text class="user_name flex">这是用户名</text>
-    <text class="user_phone flex">18112345678</text>
+    <text class="user_name flex">{{temp_userinfo.username}}</text>
+    <text class="user_phone flex">{{temp_userinfo.phone}}</text>
   </view>
 </view>
 <view class="s2" bindtap="onTapkefu">
@@ -19,16 +19,16 @@
   <view class="s3_in">
 
     <view class="s3_mymoney">
-      <text >已赚佣金</text>
+      <text >我的余额</text>
     </view>
 
     <view class="s3_money">
-      <text>1000元</text>
+      <text>{{temp_userinfo.account}}元</text>
     </view>
 
-    <view class="s3_getmoney" bindtap="onTapaddmoney">
+    <!--<view class="s3_getmoney" bindtap="onTapaddmoney">
       <text>去提现</text>
-    </view>
+    </view>-->
 
   </view>
 

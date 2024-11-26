@@ -53,7 +53,32 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    wx.request({
+      url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/admin/user',
+      method:'GET',
+      success(res){
+        if(res.statusCode===200){
+          console.log("成功测试");
+          console.log(res);
+        }
+        else{
+          console.log("测试失败");
+        }
+      }
+    });
+    wx.request({
+      url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/admin/order',
+      method:'GET',
+      success(res){
+        if(res.statusCode===200){
+          console.log("第二个成功测试");
+          console.log(res.data.data);
+        }
+        else{
+          console.log("第二个测试失败");
+        }
+      }
+    })
   },
 
   /**

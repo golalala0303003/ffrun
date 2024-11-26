@@ -1,1 +1,2 @@
 /* pages/home/user/ticket/ticket.wxss */
+@import "/pages/home/administrator/administrator.wxss"

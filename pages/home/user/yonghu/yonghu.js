@@ -27,7 +27,25 @@ Page({
     });
     
   },
-
+  get_userinfo(){
+    let id_temp=wx.getStorageSync('user_id')
+    console.log("开始读取该用户信息");
+    wx.request({
+      url: `http://127.0.0.1:4523/m1/5470558-5146069-default/user/user/${id_temp}`,
+      success(res){
+        if(res.statusCode===200){
+          console.log("成功读取该用户信息");
+          console.log("这个是user_info",res.data.data);
+          wx.setStorageSync('user_info', res.data.data);
+          console.log("成功存储用户信息");
+        }
+        else{
+          console.log("信息读取失败");
+        }
+      }
+      
+    })
+  },
   user_register(){
     let temp_info=wx.getStorageSync('user_info');
     let temp_id=wx.getStorageSync('user_id');
@@ -53,6 +71,7 @@ Page({
       success(res){
         if(res.statusCode===200){
           console.log("注册/更新数据成功");
+          that.get_userinfo();
         }
         else{
           console.log("注册/更新数据失败");
@@ -79,7 +98,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.get_userinfo();
   },
 
   /**

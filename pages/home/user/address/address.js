@@ -1,24 +1,51 @@
-// pages/home/user/address/address.js
+// pages/home/user/addcredit/addcredit.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    chargeNum:0
+    uncommit_address:""
   },
   formSubmit:function(e){
-    //console.log("充值的金额为",e.detail.value.input);
     this.setData({
-      chargeNum:e.detail.value.input
-    });
-    this.chargeM();
+      uncommit_address:e.detail.value.input
+    },()=>{
+      this.user_register();
+    }  );
   },
-  chargeM(){
+  user_register(){
+    let temp_info=wx.getStorageSync('user_info');
+    let temp_id=wx.getStorageSync('user_id');
+    let temp_openId=wx.getStorageSync('user_open_id');
+    let that=this;
+    //console.log("test是否更改",that.data.uncommit_address);
+    //console.log("获取到当前userinfo",temp_info);
     wx.request({
       url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/user/user',
       method:'PUT',
-      
+      data:{
+        userId: temp_id,
+        openId: temp_openId,
+        username: temp_info.username,
+        phone: temp_info.phone,
+        account: temp_info.account,
+        userStar: temp_info.userStar,
+        orderNNum: temp_info.orderNNum,
+        orderNum: temp_info.orderNum,
+        userAddress: that.data.uncommit_address,
+        tickets:temp_info.tickets
+      },
+      success(res){
+        if(res.statusCode===200){
+          console.log("注册/更新数据成功");
+          that.get_userinfo();
+        }
+        else{
+          console.log("注册/更新数据失败");
+        }
+      }
+
     })
   },
   get_userinfo(){
@@ -58,7 +85,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    this.get_userinfo();
+
   },
 
   /**

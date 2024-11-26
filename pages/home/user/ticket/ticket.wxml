@@ -1,2 +1,12 @@
-<!--pages/home/user/ticket/ticket.wxml-->
-<text>pages/home/user/ticket/ticket.wxml</text>
+<view>查看卡券</view>
+
+  
+
+<scroll-view scroll-y="true" enable-flex="true" class="orderContainer">
+  <view wx:for="{{ticketList}}" wx:key="index">
+    <view class="orderForm_user">
+      <text>优惠券：---{{item.ticketName}}</text>  
+      <text>优惠力度---{{item.ticketAccount}}</text>
+    </view>  
+  </view>
+</scroll-view>

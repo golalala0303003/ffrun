@@ -1,1 +1,1 @@
-GO FUCK YOURSELF
+wechat mini program ffrun

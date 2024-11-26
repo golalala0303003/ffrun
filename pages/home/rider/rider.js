@@ -112,7 +112,7 @@ Page({
   jiedan:function(e)
   {
     const orderId = e.currentTarget.dataset.orderId;
-    const riderId = e.currentTarget.dataset.riderId;
+    const riderId = wx.getStorageSync('user_info').userId;
     wx.request({
       url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/user/rider/accept',
       method:'PUT',
