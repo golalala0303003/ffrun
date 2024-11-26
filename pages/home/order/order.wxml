@@ -20,9 +20,9 @@
           <text>{{item.delivery_address}}</text>
         </view>
         <view class="block"><text>配送时间:{{item.delivery_time}}</text></view>
-        <view class="block"><text>骑手ID:{{item.rider_id}}</text></view>
+        <view class="bok"><text>骑手ID:{{item.rider_id}}</text></view><!-- 
         <view class="broky"><text>用户ID:{{item.user_id}}</text></view>
-        <view class="bok"><text>评价:{{item.order_star}}</text></view>
+        <view class="bok"><text>评价:{{item.order_star}}</text></view> -->
       </view>
         <view class="divider"></view>
         <view class="buTTons">

@@ -96,6 +96,7 @@
   height: 80rpx;
   font-size: 30rpx;
   margin-top: 40rpx;
+  margin-left: 80rpx;
 }
 .broky{
   height: 80rpx;
@@ -105,5 +106,6 @@
 .bok{
   height: 80rpx;
   font-size: 30rpx;
-  margin-top: 35rpx;
+  margin-top: 20rpx;
+  margin-left: 80rpx;
 }
