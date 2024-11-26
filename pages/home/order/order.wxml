@@ -6,12 +6,15 @@
   <text class="tab {{currentTab=='done'?'tab_highlight':''}}" bindtap="changeTab" data-type="done">已完成</text>
 </view>
 <scroll-view scroll-y="true" enable-flex="true" class="orderContainer">
-  <view wx:if="{{currentTab === 'all'}}" wx:for="{{orderListall}}" wx:key="index">
+  <view wx:for="{{orderListall}}" wx:key="index" wx:if="{{currentTab === 'all'}}">
     <view class="orderForm">
       <view class="basicData">
         <view class="typeService">{{item.type_service}}</view>
         <view class="order_id">{{item.order_id}}</view>
-        <view class="typeDoneyet">{{item.status}}</view>
+        <view class="typeDoneyet">
+        <text wx:if="{{item.status === 0}}">待接单</text>
+        <text wx:elif="{{item.status === 1}}">进行中</text>
+        <text wx:else="{{item.status === 2}}">已完成</text></view>
       </view>
       <view class="divider"></view>
       <view class="startEnd">
@@ -37,7 +40,10 @@
       <view class="basicData">
         <view class="typeService">{{item.type_service}}</view>
         <view class="order_id">{{item.order_id}}</view>
-        <view class="typeDoneyet">{{item.status}}</view>
+        <view class="typeDoneyet">
+        <text wx:if="{{item.status === 0}}">待接单</text>
+        <text wx:elif="{{item.status === 1}}">进行中</text>
+        <text wx:else="{{item.status === 2}}">已完成</text></view>
       </view>
       <view class="divider"></view>
       <view class="startEnd">
@@ -52,7 +58,7 @@
       </view>
       <view class="divider"></view>
       <view class="buTTons">
-        <text class="buTTon" bind:tap="jmpOD">查询</text>
+        <text class="buTTon" bind:tap="jmpOD" data-order_id="{{item.order_id}}">查询</text>
         <text class="buTTon">操作2</text>
       </view>
     </view>
@@ -63,7 +69,10 @@
       <view class="basicData">
         <view class="typeService">{{item.type_service}}</view>
         <view class="order_id">{{item.order_id}}</view>
-        <view class="typeDoneyet">{{item.status}}</view>
+        <view class="typeDoneyet">
+        <text wx:if="{{item.status === 0}}">待接单</text>
+        <text wx:elif="{{item.status === 1}}">进行中</text>
+        <text wx:else="{{item.status === 2}}">已完成</text></view>
       </view>
       <view class="divider"></view>
       <view class="startEnd">
@@ -78,18 +87,21 @@
       </view>
       <view class="divider"></view>
       <view class="buTTons">
-        <text class="buTTon" bind:tap="jmpOD">查询</text>
+        <text class="buTTon" bind:tap="jmpOD" data-order_id="{{item.order_id}}">查询</text>
         <text class="buTTon">操作2</text>
       </view>
     </view>
   </view>
 
-  <view wx:if="{{currentTab === 'done'&&item.status===2}}" wx:for="{{orderListall}}" wx:key="index">
+  <view wx:if="{{currentTab === 'done'&&item.status ==='2'}}" wx:for="{{orderListall}}" wx:key="index">
     <view class="orderForm">
       <view class="basicData">
         <view class="typeService">{{item.type_service}}</view>
         <view class="order_id">{{item.order_id}}</view>
-        <view class="typeDoneyet">{{item.status}}</view>
+        <view class="typeDoneyet">
+        <text wx:if="{{item.status === 0}}">待接单</text>
+        <text wx:elif="{{item.status === 1}}">进行中</text>
+        <text wx:else="{{item.status === 2}}">已完成</text></view>
       </view>
       <view class="divider"></view>
       <view class="startEnd">
@@ -104,7 +116,7 @@
       </view>
       <view class="divider"></view>
       <view class="buTTons">
-        <text class="buTTon" bind:tap="jmpOD">查询</text>
+        <text class="buTTon" bind:tap="jmpOD" data-order_id="{{item.order_id}}">查询</text>
         <text class="buTTon">操作2</text>
       </view>
   </view>

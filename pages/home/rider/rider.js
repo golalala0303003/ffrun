@@ -1,4 +1,5 @@
 // pages/home/rider/rider.js
+import test from '../../../data/test/test'
 Page({
 
   /**
@@ -6,20 +7,8 @@ Page({
    */
   data: {
     currentTab:"all",
-    orderListall:[
-      {typeService:"代寄快递",numService:"123456789123456789",typeDoneyet:"已完成",start:"福师大",end:"衡水中学",name:"小王",phone:"18111111111"},
-      {typeService:"智能跑腿",numService:"912345678912345678",typeDoneyet:"未完成",start:"福州十六中",end:"福州大学",name:"张三",phone:"12345678965"},
-      {typeService:"拿麦当劳",numService:"912345678912345678",typeDoneyet:"已完成",start:"地点1",end:"地点2",name:"李四",phone:"12345678965"},
-      {typeService:"智能跑腿",numService:"912345678912345678",typeDoneyet:"未完成",start:"福州十六中",end:"福州大学",name:"张三",phone:"12345678965"},
-      {typeService:"智能跑腿",numService:"912345678912345678",typeDoneyet:"未完成",start:"福州十六中",end:"福州大学",name:"张三",phone:"12345678965"},
-    ],
-    orderListdone:[
-      {typeService:"智能跑腿",numService:"912345678912345678",typeDoneyet:"未完成",start:"福州十六中",end:"福州大学",name:"张三",phone:"12345678965"},
-      {typeService:"智能跑腿",numService:"912345678912345678",typeDoneyet:"未完成",start:"福州十六中",end:"福州大学",name:"张三",phone:"12345678965"},
-      {typeService:"智能跑腿",numService:"912345678912345678",typeDoneyet:"未完成",start:"福州十六中",end:"福州大学",name:"张三",phone:"12345678965"},
-      {typeService:"智能跑腿",numService:"912345678912345678",typeDoneyet:"未完成",start:"福州十六中",end:"福州大学",name:"张三",phone:"12345678965"},
-      {typeService:"智能跑腿",numService:"912345678912345678",typeDoneyet:"未完成",start:"福州十六中",end:"福州大学",name:"张三",phone:"12345678965"}
-    ]
+    orderListall:[],
+    selectedItem: null
   },
   changeTab: function (e) {
     const type = e.currentTarget.dataset.type;
@@ -51,7 +40,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    test.get_rider_order(
+      (data)=>{
+        console.log("@@@",data.data);
+        this.setData({
+          orderListall:data.data,
+        });
+        console.log("骑手端：",this.data.orderListall);
+      }
+    );
   },
 
   /**
@@ -72,7 +69,15 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-
+    test.get_rider_order(
+      (data)=>{
+        console.log(data.data);
+        this.setData({
+          orderListall:data.data,
+        });
+        console.log("我们成功定义了信息：",this.data.orderListall);
+      }
+    );
   },
 
   /**
@@ -87,5 +92,41 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+
+  jmpod: function(e) {
+    const orderId = e.currentTarget.dataset.orderId;
+    const item = this.data.orderListall.find(i => i.order_id === orderId);
+    if (item) { 
+      this.setData({
+        selectedItem: item
+      });
+      wx.navigateTo({
+        url: `/pages/home/rider/Order_detail/Order_detail?item=${encodeURIComponent(JSON.stringify(item))}`
+      });
+    } else {
+      console.log('未找到对应的订单项');
+    }
+  },
+
+  jiedan:function(e)
+  {
+    const orderId = e.currentTarget.dataset.orderId;
+    const riderId = e.currentTarget.dataset.riderId;
+    wx.request({
+      url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/user/rider/accept',
+      method:'PUT',
+      data:{
+        orderId:orderId,
+        riderId:riderId
+      },
+      success(res) {
+        console.log('请求成功:', res.statusCode);
+      },
+      fail(error) {
+        console.error('请求失败:', error);
+      }
+    })
   }
+
 })

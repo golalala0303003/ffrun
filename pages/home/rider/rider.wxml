@@ -1,6 +1,6 @@
 <!--pages/home/order/order.wxml-->
 <view class="tabBartop">
-  <text class="tab {{currentTab=='all'?'tab_highlight':''}}" bindtap="changeTab" data-type="all">接单大厅</text>
+  <text class="tab {{currentTab=='all'?'tab_highlight':''}}" bindtap="changeTab" data-type="all">订单大厅</text>
   <text class="tab {{currentTab=='done'?'tab_highlight':''}}" bindtap="changeTab" data-type="done">已接单</text>
 </view>
 <scroll-view scroll-y="true" enable-flex="true" class="orderContainer">
@@ -8,29 +8,33 @@
     <view class="orderForm">
       <view class="basicData">
         <view class="typeService">{{item.typeService}}</view>
-        <view class="numService">{{item.numService}}</view>
-        <view class="typeDoneyet">{{item.typeDoneyet}}</view>
+        <view class="numService">{{item.orderId}}</view>
+        <view class="typeDoneyet">
+        <text wx:if="{{item.status === 0}}">待接单</text>
+        <text wx:elif="{{item.status === 1}}">进行中</text>
+        <text wx:else="{{item.status === 2}}">已完成</text></view>
       </view>
       <view class="divider"></view>
       <view class="startEnd">
         <view class="desTination">
           <image class="desImage" src="/static/order_icon/起点.png"></image>
-          <text>{{item.start}}</text>
+          <text>{{item.orderAddress}}</text>
         </view>
         <view class="desTination">
           <image class="desImage" src="/static/order_icon/终点.png"></image>
-          <text>{{item.end}}</text>
+          <text>{{item.deliveryAddress}}</text>
         </view>
-        <view style="margin-top: 100rpx;"><text>{{item.name}}</text></view>
-        <view><text>{{item.phone}}</text></view>
+        <view class="block"><text>配送时间:{{item.deliveryTime}}</text></view>
+        <view class="brock"><text>用户ID:{{item.userId}}</text></view>
       </view>
       <view class="divider"></view>
       <view class="buTTons">
-        <text class="buTTon">接单</text>
+        <text class="buTTon" bind:tap="jmpod" data-orderId="{{item.orderId}}">查询</text>
+        <text class="buTTon" bind:tap="jiedan" >接单</text>
       </view>
     </view>
   </view>
-  <view wx:if="{{currentTab === 'done'}}" wx:for="{{orderListdone}}" wx:key="index">
+  <view wx:if="{{currentTab === 'done'&& item.status===1}}" wx:for="{{orderListdone}}" wx:key="index">
     <view class="orderForm">
       <view class="basicData">
         <view class="typeService">{{item.typeService}}</view>

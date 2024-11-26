@@ -1,4 +1,5 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "骑手中心"
+  "navigationBarTitleText": "骑手中心",
+  "enablePullDownRefresh": true
 }

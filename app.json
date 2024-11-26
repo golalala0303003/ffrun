@@ -22,7 +22,8 @@
     "pages/home/user/addcredit/addcredit",
     "pages/home/order/order_detail/order_detail",
     "pages/home/user/ticket/ticket",
-    "pages/home/user/address/address"
+    "pages/home/user/address/address",
+    "pages/home/rider/Order_detail/Order_detail"
   ],
   "window": {
     "navigationBarTextStyle": "black",

@@ -4,7 +4,10 @@
     <view class="basicData">
         <view class="typeService">{{selectedItem.type_service}}</view>
         <view class="order_id">{{selectedItem.order_id}}</view>
-        <view class="typeDoneyet">{{selectedItem.status}}</view>
+        <view class="typeDoneyet">
+        <text wx:if="{{item.status === 0}}">待接单</text>
+        <text wx:elif="{{item.status === 1}}">进行中</text>
+        <text wx:else="{{item.status === 2}}">已完成</text></view>
       </view>
       <view class="divider"></view>
       <view class="startEnd">
