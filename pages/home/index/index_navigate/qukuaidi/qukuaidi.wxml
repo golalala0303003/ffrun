@@ -3,20 +3,17 @@
   <form catchsubmit="formSubmit" catchreset="formReset">
     <scroll-view class="pay_body" scroll-y="true" enable-flex="true" >
       <view class="pay_item_form_address">
-        <picker name="addresspick" bindchange="bindPickerChange" value="{{address_index}}" range="{{address_array}}">
           <view class="address_font">
-            选择地址：{{address_array[address_index]}} 
+            选择地址：{{address_array}} 
           </view>
-        </picker>
         <view class="divider"></view>
       </view>
 
       <view class="pay_item_form_time">
         <view class="pay_item_font">选择接受配送时间</view>
-        <checkbox-group name="pay_checkbox" class="pay_checkbox">
-          <label><checkbox value="time1" /> 12：00-14：00</label>
-          <label><checkbox value="time2" /> 18：00-20：00</label>
-        </checkbox-group>
+        <view class="pay_checkbox">
+          <input name="deliverTime" placeholder="请输入配送时间"/>
+        </view>
         <view class="divider"></view>
       </view>
 
@@ -25,7 +22,7 @@
         <view>
           <editor id="editor" placeholder="请输入文字或者插入图片" bindready="onEditorReady" ></editor>
         </view>
-        <view class="textbutton" bindtap="insertImage">点击我插入图片喵</view>
+        <view class="textbutton" bindtap="insertImage">点击我插入图片</view>
         <view class="divider"></view>
       </view>
 
@@ -40,7 +37,7 @@
       <view class="pay_item_form_cost">
         <view class="pay_item_form_cost_line1">
           <text class="pay_item_cost1">基础费用</text>
-          <text class="pay_item_cost2">0元</text>
+          <text class="pay_item_cost2">{{basiccost}}元</text>
         </view>
         <view class="divider"></view>
 
@@ -49,7 +46,7 @@
             <text class="pay_item_cost1">优惠券</text>
             <picker name="couponspick" bindchange="bindPickerChange2" value="{{coupons_index}}" range="{{coupons_array}}">
               <view class="pay_item_cost2"> 
-                {{coupons_array[coupons_index]}}¥>
+                -{{coupons_array[coupons_index].ticketAccount}}¥>
               </view>
             </picker>
           </view>
@@ -69,7 +66,6 @@
       </view>
     </scroll-view>
     <view class="button_line">
-      <text class="price_form">目前价格:50元</text>
       <button class="button_form" formType="submit">提交订单</button>
     </view>
   </form>

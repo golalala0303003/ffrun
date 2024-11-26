@@ -1,7 +1,7 @@
 export default{
-  getlist(callback){
+  getorder(callback){
     wx.request({
-      url: 'http://test.com/test/Data',
+      url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/user/order/1',
       dataType:'json',
       success(res){
         console.log("respond data=",res);
