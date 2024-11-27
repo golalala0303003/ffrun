@@ -1,7 +1,7 @@
 // pages/home/administrator/administrator.js
 import test from '../../../data/test/test'
 Page({
-
+    
   /**
    * 页面的初始数据
    */
@@ -41,7 +41,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    let that=this;
+    const that=this;
     wx.request({
       url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/admin/order',
       success(res){
@@ -55,23 +55,26 @@ Page({
           else
           console.log("订单测试失败")
         }
-    }),
-
+    });
+    
     wx.request({
       url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/admin/user',
       success(res){
         if(res.statusCode===200){
           console.log("用户测试成功"),
-          console.log(res.data),
+          console.log(res.data.data),
           that.setData({
-            userListall:res.data
-          })
-          }
-          else
-          console.log("用户测试失败")
+            userListall:res.data.data
+          });
+          console.log("这是用户列表",that.data.userListall);
         }
-    })
+        else{
+          console.log("man");
+        }
 
+      }
+    });
+    console.log("111",that.data.userListall);
   },
 
   /**
@@ -92,44 +95,14 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-    let that=this;
-    wx.request({
-      url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/admin/order',
-      success(res){
-        if(res.statusCode===200){
-          console.log("订单测试成功"),
-          console.log(res.data.data),
-          that.setData({
-            orderListall:res.data.data
-          })
-          }
-          else
-          console.log("订单测试失败")
-        }
-    }),
-
-    wx.request({
-      url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/admin/user',
-      success(res){
-        if(res.statusCode===200){
-          console.log("用户测试成功"),
-          console.log(res.data),
-          that.setData({
-            userListall:res.data
-          })
-          }
-          else
-          console.log("用户测试失败")
-        }
-    })
-
+    
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom() {
-
+  
   },
 
   /**

@@ -1,0 +1,6 @@
+
+<view>欢迎来到FFRUN</view>
+<view>新用户请注册</view>
+<view>老用户请登录</view>
+<view bindtap="registerNow">点击这里注册</view>
+<view bindtap="loginNow">点击这里登录</view>

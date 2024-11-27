@@ -16,6 +16,15 @@ Page({
       currentTab: type,
     });
     console.log("change to",type);
+    test.get_rider_order(
+      (data)=>{
+        console.log("@@@",data.data);
+        this.setData({
+          orderListall:data.data,
+        });
+        console.log("骑手端：",this.data.orderListall);
+      }
+    );
   },
   goToNewPage: function() {
     wx.navigateTo({

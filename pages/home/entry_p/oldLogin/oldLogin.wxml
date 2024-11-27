@@ -1,0 +1,8 @@
+<text>愣着干嘛 赶紧登录</text>
+<form catchsubmit='formSubmit'>
+  <view>请输入您的用户名</view>
+  <view>
+    <input name="input" placeholder="请输入用户名"/>
+  </view>
+  <button formType="submit">点击登录</button>
+</form>

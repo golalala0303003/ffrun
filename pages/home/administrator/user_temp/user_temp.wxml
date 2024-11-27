@@ -15,8 +15,10 @@
         <view class="block"><text>用户评分:{{selectedItem.userStar}}</text></view>
         <view class="block"><text>未完成订单数:{{selectedItem.orderNNum}}</text></view>
         <view class="block"><text>已完成订单数:{{selectedItem.orderNum}}</text></view>
-        <view class="block"><text>卡券名称:{{selectedItem.tickets.ticketName}}</text></view>
-        <view class="block"><text>卡券数量:{{selectedItem.tickets.ticketSum}}</text></view>
-        <view class="block"><text>卡券面额:{{selectedItem.tickets.ticketAccount}}</text></view>
+        <view  class="block" wx:for="{{selectedItem.ticketList}}" wx:key="index"> 
+          <view ><text>卡券名称:{{item.ticketName}}</text></view>
+          <view ><text>卡券数量:{{item.ticketSum}}</text></view>
+          <view ><text>卡券面额:{{item.ticketAccount}}</text></view>
+        </view>  
       </view>
 </view>

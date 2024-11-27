@@ -9,8 +9,8 @@
   <view wx:for="{{orderListall}}" wx:key="index" wx:if="{{currentTab === 'all'}}">
     <view class="orderForm">
       <view class="basicData">
-        <view class="typeService">{{item.type_service}}</view>
-        <view class="order_id">{{item.order_id}}</view>
+        <view class="typeService">{{item.typeService}}</view>
+        <view class="order_id">{{item.orderId}}</view>
         <view class="typeDoneyet">
         <text wx:if="{{item.status === 0}}">待接单</text>
         <text wx:elif="{{item.status === 1}}">进行中</text>
@@ -20,17 +20,16 @@
       <view class="startEnd">
         <view class="desTination">
           <image class="desImage" src="/static/order_icon/终点.png"></image>
-          <text>{{item.delivery_address}}</text>
+          <text>{{item.deliveryAddress}}</text>
         </view>
-        <view class="block"><text>配送时间:{{item.delivery_time}}</text></view>
-        <view class="bok"><text>骑手ID:{{item.rider_id}}</text></view><!-- 
+        <view class="block"><text>配送时间:{{item.deliveryAddress}}</text></view>
+        <view class="bok"><text>骑手ID:{{item.riderId}}</text></view><!-- 
         <view class="broky"><text>用户ID:{{item.user_id}}</text></view>
         <view class="bok"><text>评价:{{item.order_star}}</text></view> -->
       </view>
         <view class="divider"></view>
         <view class="buTTons">
-        <text class="buTTon" bind:tap="jmpOD" data-order_id="{{item.order_id}}">查询</text>
-        <text class="buTTon">操作2</text>
+        <text class="buTTon" bind:tap="jmpOD" data-order_id="{{item.orderId}}">查询</text>
       </view>
     </view>
   </view>
@@ -38,8 +37,8 @@
   <view wx:if="{{currentTab === 'yetget'&& item.status===0}}" wx:for="{{orderListall}}" wx:key="index">
     <view class="orderForm">
       <view class="basicData">
-        <view class="typeService">{{item.type_service}}</view>
-        <view class="order_id">{{item.order_id}}</view>
+        <view class="typeService">{{item.typeService}}</view>
+        <view class="order_id">{{item.orderId}}</view>
         <view class="typeDoneyet">
         <text wx:if="{{item.status === 0}}">待接单</text>
         <text wx:elif="{{item.status === 1}}">进行中</text>
@@ -49,17 +48,14 @@
       <view class="startEnd">
         <view class="desTination">
           <image class="desImage" src="/static/order_icon/终点.png"></image>
-          <text>{{item.delivery_address}}</text>
+          <text>{{item.deliveryAddress}}</text>
         </view>
-        <view class="block"><text>配送时间:{{item.delivery_time}}</text></view>
-        <view class="block"><text>骑手ID:{{item.rider_id}}</text></view>
-        <view class="broky"><text>用户ID:{{item.user_id}}</text></view>
-        <view class="bok"><text>评价:{{item.order_star}}</text></view>
+        <view class="block"><text>配送时间:{{item.deliveryTime}}</text></view>
+        <view class="block"><text>骑手ID:{{item.riderId}}</text></view>
       </view>
       <view class="divider"></view>
       <view class="buTTons">
-        <text class="buTTon" bind:tap="jmpOD" data-order_id="{{item.order_id}}">查询</text>
-        <text class="buTTon">操作2</text>
+        <text class="buTTon" bind:tap="jmpOD" data-order_id="{{item.orderId}}">查询</text>
       </view>
     </view>
   </view>
@@ -67,8 +63,8 @@
   <view wx:if="{{currentTab === 'alpay'&&item.status===1}}" wx:for="{{orderListall}}" wx:key="index">
     <view class="orderForm">
       <view class="basicData">
-        <view class="typeService">{{item.type_service}}</view>
-        <view class="order_id">{{item.order_id}}</view>
+        <view class="typeService">{{item.typeService}}</view>
+        <view class="order_id">{{item.orderId}}</view>
         <view class="typeDoneyet">
         <text wx:if="{{item.status === 0}}">待接单</text>
         <text wx:elif="{{item.status === 1}}">进行中</text>
@@ -78,17 +74,14 @@
       <view class="startEnd">
         <view class="desTination">
           <image class="desImage" src="/static/order_icon/终点.png"></image>
-          <text>{{item.delivery_address}}</text>
+          <text>{{item.deliveryAddress}}</text>
         </view>
-        <view class="block"><text>配送时间:{{item.delivery_time}}</text></view>
-        <view class="block"><text>骑手ID:{{item.rider_id}}</text></view>
-        <view class="broky"><text>用户ID:{{item.user_id}}</text></view>
-        <view class="bok"><text>评价:{{item.order_star}}</text></view>
+        <view class="block"><text>配送时间:{{item.deliveryTime}}</text></view>
+        <view class="block"><text>骑手ID:{{item.riderId}}</text></view>
       </view>
       <view class="divider"></view>
       <view class="buTTons">
-        <text class="buTTon" bind:tap="jmpOD" data-order_id="{{item.order_id}}">查询</text>
-        <text class="buTTon">操作2</text>
+        <text class="buTTon" bind:tap="jmpOD" data-order_id="{{item.orderId}}">查询</text>
       </view>
     </view>
   </view>
@@ -96,8 +89,8 @@
   <view wx:if="{{currentTab === 'done'&&item.status ==='2'}}" wx:for="{{orderListall}}" wx:key="index">
     <view class="orderForm">
       <view class="basicData">
-        <view class="typeService">{{item.type_service}}</view>
-        <view class="order_id">{{item.order_id}}</view>
+        <view class="typeService">{{item.typeService}}</view>
+        <view class="order_id">{{item.orderId}}</view>
         <view class="typeDoneyet">
         <text wx:if="{{item.status === 0}}">待接单</text>
         <text wx:elif="{{item.status === 1}}">进行中</text>
@@ -107,17 +100,14 @@
       <view class="startEnd">
         <view class="desTination">
           <image class="desImage" src="/static/order_icon/终点.png"></image>
-          <text>{{item.delivery_address}}</text>
+          <text>{{item.deliveryAddress}}</text>
         </view>
-        <view class="block"><text>配送时间:{{item.delivery_time}}</text></view>
-        <view class="block"><text>骑手ID:{{item.rider_id}}</text></view>
-        <view class="broky"><text>用户ID:{{item.user_id}}</text></view>
-        <view class="bok"><text>评价:{{item.order_star}}</text></view>
+        <view class="block"><text>配送时间:{{item.deliveryTime}}</text></view>
+        <view class="block"><text>骑手ID:{{item.riderId}}</text></view>
       </view>
       <view class="divider"></view>
       <view class="buTTons">
-        <text class="buTTon" bind:tap="jmpOD" data-order_id="{{item.order_id}}">查询</text>
-        <text class="buTTon">操作2</text>
+        <text class="buTTon" bind:tap="jmpOD" data-order_id="{{item.orderId}}">查询</text>
       </view>
   </view>
 </view>

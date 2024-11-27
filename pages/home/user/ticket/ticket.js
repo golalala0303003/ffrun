@@ -10,7 +10,7 @@ Page({
   loadticketList(){
     let temp_userinfo=wx.getStorageSync('user_info');
     this.setData({
-      ticketList:temp_userinfo.tickets
+      ticketList:temp_userinfo.ticketList
     })
   },
   /**

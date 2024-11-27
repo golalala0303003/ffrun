@@ -24,7 +24,9 @@
     "pages/home/user/ticket/ticket",
     "pages/home/user/address/address",
     "pages/home/rider/Order_detail/Order_detail",
-    "pages/home/administrator/order_temp/order_temp"
+    "pages/home/administrator/order_temp/order_temp",
+    "pages/home/entry_p/entry_p",
+    "pages/home/entry_p/oldLogin/oldLogin"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -57,7 +59,7 @@
   },
   "style": "v2",
   "debug": true,
-  "entryPagePath": "pages/home/index/index",
+  "entryPagePath": "pages/home/entry_p/entry_p",
   "componentFramework": "glass-easel",
   "sitemapLocation": "sitemap.json",
   "lazyCodeLoading": "requiredComponents"

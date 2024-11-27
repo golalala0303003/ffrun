@@ -17,6 +17,15 @@ Page({
     this.setData({
       currentTab: type,
     });
+    test.getorder(
+      (data)=>{
+        console.log(data.data);
+        this.setData({
+          orderListall:data.data,
+        });
+        console.log("我们成功定义了信息：",this.data.orderListall);
+      }
+    );
     console.log("change to",type);
   },
 
@@ -75,7 +84,7 @@ Page({
         this.setData({
           orderListall:data.data,
         });
-        console.log("我们成功定义了信息：",this.data.list);
+        console.log("我们成功定义了信息：",this.data.orderListall);
       }
     );
   },
@@ -95,8 +104,11 @@ Page({
   },
 
   jmpOD: function(e) {
-    const order_id = e.currentTarget.dataset.order_id;
-    const item = this.data.orderListall.find(i => i.order_id === order_id);
+    console.log(e);
+    const orderId = e.currentTarget.dataset.order_id;
+    console.log("点击的 orderId:", orderId); // 查看点击的 orderId
+    console.log("orderListall 数据:", this.data.orderListall); // 查看 orderListall 数据
+    const item = this.data.orderListall.find(i => i.orderId === orderId);
     if (item) { // 确保找到了项
       this.setData({
         selectedItem: item
