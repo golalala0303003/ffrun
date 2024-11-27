@@ -7,10 +7,9 @@ Page({
   data: {
     login_name:""
   },
-  login_back(){
+  login_back_old(){
     let that=this;
     let temp_name=this.data.login_name;
-    console.log(temp_name);
     wx.request({
       url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/user/user/login',
       method: 'POST',
@@ -20,8 +19,8 @@ Page({
       success:(res)=>{
         if(res.statusCode===200){
           console.log("成功读取该用户信息");
-          console.log("这个是user_info",res.data.data);
-          wx.setStorageSync('user_info', res.data.data);
+          console.log("这个是user_info----------------------",res.data.data);
+          wx.setStorageSync('user_info',res.data.data );
           wx.setStorageSync('user_open_id', res.data.data.openId);
           wx.setStorageSync('user_id', res.data.data.userId);
           console.log("成功更新用户信息");
@@ -40,7 +39,7 @@ Page({
     this.setData({
       login_name:e.detail.value.input
     });
-    this.login_back();
+    this.login_back_old();
   },
   /**
    * 生命周期函数--监听页面加载
