@@ -9,7 +9,7 @@
   top: 0;
   right: 0;
   height: 400rpx;
-  background-color:#FFC60F;
+  background-color:#FF4500;
   z-index: 6;
 }
 .pay_body{

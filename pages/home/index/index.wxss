@@ -1,5 +1,5 @@
 /* pages/home/index/index.wxss */
-.tpf-nav-bar-bg-color{position: absolute; left: 0; top: 0; right: 0; height: 260rpx; background-color:#ffcc13;}
+.tpf-nav-bar-bg-color{position: absolute; left: 0; top: 0; right: 0; height: 260rpx; background-color:#FF1313;}
 .top_text{
   position: relative;
   z-index: 1;

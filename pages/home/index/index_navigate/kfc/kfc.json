@@ -1,7 +1,7 @@
 {
   "usingComponents": {},
   "navigationBarTitleText": "肯德基代取",
-  "navigationBarBackgroundColor": "#FFC60F",
+  "navigationBarBackgroundColor": "#FF4500",
   "navigationBarTextStyle":"white",
   "backgroundColor": "#FE9900",
   "enablePullDownRefresh": true

@@ -4,7 +4,7 @@
     <scroll-view class="pay_body" scroll-y="true" enable-flex="true" >
       <view class="pay_item_form_address">
 
-          <view class="address_font">
+          <view class="address_font" style="position: relative; left: 10rpx; top: 0rpx; width: 680rpx; display: block; box-sizing: border-box">
             选择地址：{{address_array}} 
           </view>
 
@@ -12,26 +12,26 @@
       </view>
 
       <view class="pay_item_form_time">
-        <view class="pay_item_font">选择接受配送时间</view>
+        <view class="pay_item_font" style="position: relative; left: 10rpx; top: 0rpx; width: 680rpx; display: block; box-sizing: border-box">选择接受配送时间</view>
         <view class="pay_checkbox">
-          <input name="deliverTime" placeholder="请输入配送时间"/>
+          <input name="deliverTime" style="position: relative; left: 10rpx; top: 0rpx; width: 680rpx; display: block; box-sizing: border-box" placeholder="请输入配送时间"/>
         </view>
         <view class="divider"></view>
       </view>
 
       <view class="pay_item_form_code">
-        <view class="pay_item_font">商品信息</view>
+        <view class="pay_item_font" style="position: relative; left: 10rpx; top: 0rpx; width: 680rpx; display: block; box-sizing: border-box">商品信息</view>
         <view>
-          <editor id="editor" placeholder="请输入文字或者插入图片" bindready="onEditorReady" ></editor>
+          <editor id="editor" style="position: relative; left: 10rpx; top: 0rpx; width: 680rpx; display: block; box-sizing: border-box" placeholder="请输入文字或者插入图片" bindready="onEditorReady" ></editor>
         </view>
-        <view class="textbutton" bindtap="insertImage">点击我插入图片</view>
+        <view class="textbutton" bindtap="insertImage" style="position: relative; left: 10rpx; top: 0rpx">点击我插入图片</view>
         <view class="divider"></view>
       </view>
 
       <view class="pay_item_form_add">
-        <view class="pay_item_font">备注</view>
+        <view class="pay_item_font" style="position: relative; left: 10rpx; top: 0rpx; width: 680rpx; display: block; box-sizing: border-box">备注</view>
         <view>
-          <input class="pay_item_add" name="add" />
+          <input class="pay_item_add" name="add" style="position: relative; left: 10rpx; top: 0rpx; width: 680rpx; display: block; box-sizing: border-box"/>
         </view>
         <view class="divider"></view>
       </view>
