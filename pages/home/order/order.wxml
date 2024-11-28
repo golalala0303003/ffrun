@@ -60,7 +60,7 @@
     </view>
   </view>
 
-  <view wx:if="{{currentTab === 'alpay' }}" wx:for="{{orderListall}}" wx:key="index">
+  <view wx:if="{{currentTab === 'alpay'  && item.status===1}}" wx:for="{{orderListall}}" wx:key="index">
     <view class="orderForm">
       <view class="basicData">
         <view class="typeService">{{item.typeService}}</view>
