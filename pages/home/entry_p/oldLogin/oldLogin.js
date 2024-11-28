@@ -30,7 +30,7 @@ Page({
           })
         }
         else{
-          console.log("请求失败");
+          console.log("登录失败，不存在该用户");
         }
       }
     })
@@ -45,7 +45,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    
   },
 
   /**

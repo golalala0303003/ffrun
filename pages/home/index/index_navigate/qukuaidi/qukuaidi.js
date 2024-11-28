@@ -103,6 +103,9 @@ Page({
       success(res){
         if(res.statusCode===200){
           console.log("订单提交成功",res);
+          wx.navigateTo({
+            url: '/pages/home/commit_success/commit_success',
+          })
         }
       }
     })

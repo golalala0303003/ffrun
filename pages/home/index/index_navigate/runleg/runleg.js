@@ -101,6 +101,9 @@ Page({
       success(res){
         if(res.statusCode===200){
           console.log("订单提交成功",res);
+          wx.navigateTo({
+            url: '/pages/home/commit_success/commit_success',
+          })
         }
       }
     })
@@ -152,7 +155,7 @@ Page({
     console.log("正在加载用户优惠券");
     let temp_info=wx.getStorageSync('user_info');
     this.setData({
-      coupons_array:temp_info.tickets
+      coupons_array:temp_info.ticketList
     });
     console.log("加载完成,用户优惠券为",this.data.coupons_array);
   },

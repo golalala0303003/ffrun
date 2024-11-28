@@ -1,1 +1,39 @@
-/* pages/home/entry_p/entry_p.wxss */
+.container {
+  background: linear-gradient(135deg, #6a82fb, #fc5c7d);
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.title {
+  font-size: 100rpx;
+  color: white;
+  text-align: center;
+  margin-top: 50rpx;
+  margin-bottom: 200rpx;
+}
+
+
+.button {
+  width: 80%;
+  padding: 15px 0;
+  border-radius: 30px;
+  text-align: center;
+  color: white;
+  font-size: 50rpx;
+  margin-top: 20rpx;
+}
+
+
+.register {
+  background-color: #fc5c7d;
+}
+
+
+.login {
+  background-color: #6a82fb;
+}
