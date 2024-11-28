@@ -87,7 +87,7 @@
     </view>
   </view>
 
-  <view wx:if="{{currentTab === 'done'&&item.status ==='2'}}" wx:for="{{orderListall}}" wx:key="index">
+  <view wx:if="{{currentTab === 'done'&&item.status ===2}}" wx:for="{{orderListall}}" wx:key="index">
     <view class="orderForm">
       <view class="basicData">
         <view class="typeService">{{item.typeService}}</view>

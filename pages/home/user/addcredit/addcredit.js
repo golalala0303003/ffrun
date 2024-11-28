@@ -11,7 +11,7 @@ Page({
     console.log(e.detail.value.input);
     let temp_account=wx.getStorageSync('user_info');
     this.setData({
-      uncommit_account:e.detail.value.input+temp_account.account
+      uncommit_account:parseInt(e.detail.value.input)+parseInt(temp_account.account)
     },()=>{
       this.user_register();
     }  );

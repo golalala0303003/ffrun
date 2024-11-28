@@ -133,7 +133,7 @@ Page({
   },
 
   jmpod: function(e) {
-    const orderId = e.currentTarget.dataset.orderId;
+    const orderId = e.currentTarget.dataset.order_id;
     const item = this.data.orderListall.find(i => i.order_id === orderId);
     if (item) { 
       this.setData({
@@ -149,7 +149,8 @@ Page({
 
   jiedan:function(e)
   {
-    const orderId = e.currentTarget.dataset.orderId;
+    const orderId = e.currentTarget.dataset.order_id;
+    console.log("------------",e.currentTarget);
     const riderId = wx.getStorageSync('user_info').userId;
     wx.request({
       url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/user/rider/accept',

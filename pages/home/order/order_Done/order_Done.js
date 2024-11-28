@@ -12,12 +12,14 @@ Page({
     this.setData({temp_star:e.detail.value.input});
     let temp_object=this.data.temp_order;
     let temp_object_star=this.data.temp_star;
-    //console.log(this.data.temp_star);
+    console.log("字",this.data.temp_order);
+
+    // console.log(temp_object.order_id);
     wx.request({
       url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/user/order',
       method:'PUT',
       data:{
-        orderId: temp_object.order_id,
+        orderId: this.data.temp_order.orderId,
         typeService: temp_object.typeService,
         status: 2,
         userId: temp_object.userId,
