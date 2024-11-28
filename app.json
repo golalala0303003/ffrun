@@ -26,7 +26,8 @@
     "pages/home/rider/Order_detail/Order_detail",
     "pages/home/administrator/order_temp/order_temp",
     "pages/home/entry_p/entry_p",
-    "pages/home/entry_p/oldLogin/oldLogin"
+    "pages/home/entry_p/oldLogin/oldLogin",
+    "pages/home/order/order_Done/order_Done"
   ],
   "window": {
     "navigationBarTextStyle": "black",

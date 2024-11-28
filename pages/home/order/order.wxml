@@ -60,7 +60,7 @@
     </view>
   </view>
 
-  <view wx:if="{{currentTab === 'alpay'&&item.status===1}}" wx:for="{{orderListall}}" wx:key="index">
+  <view wx:if="{{currentTab === 'alpay' }}" wx:for="{{orderListall}}" wx:key="index">
     <view class="orderForm">
       <view class="basicData">
         <view class="typeService">{{item.typeService}}</view>
@@ -82,6 +82,7 @@
       <view class="divider"></view>
       <view class="buTTons">
         <text class="buTTon" bind:tap="jmpOD" data-order_id="{{item.orderId}}">查询</text>
+        <text class="buTTon" bind:tap="jmpDone" data-order_id="{{item.orderId}}">完成订单</text>
       </view>
     </view>
   </view>

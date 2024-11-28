@@ -119,6 +119,24 @@ Page({
     } else {
       console.log('未找到对应的订单项');
     }
+  },
+  jmpDone:function(e){
+    console.log(e);
+    const orderId = e.currentTarget.dataset.order_id;
+    console.log("点击的 orderId:", orderId); // 查看点击的 orderId
+    console.log("orderListall 数据:", this.data.orderListall); // 查看 orderListall 数据
+    const item = this.data.orderListall.find(i => i.orderId === orderId);
+    if (item) { // 确保找到了项
+      this.setData({
+        selectedItem: item
+      });
+      wx.setStorageSync('temp_order_zr', this.data.selectedItem);
+      wx.navigateTo({
+        url: `/pages/home/order/order_Done/order_Done?item=${encodeURIComponent(JSON.stringify(item))}`
+      });
+    } else {
+      console.log('未找到对应的订单项');
+    }
   }
   
 })

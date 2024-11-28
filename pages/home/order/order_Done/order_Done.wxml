@@ -1,0 +1,8 @@
+<view class="container">
+  <view class="title">完成订单</view>
+  <form catchsubmit='formSubmit'>
+    <view class="label">请为订单打分</view>
+    <input name="input" placeholder="打分" class="input" />
+    <button formType="submit" class="submit-btn">点击完成订单</button>
+  </form>
+</view>

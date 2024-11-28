@@ -8,6 +8,7 @@ Page({
   data: {
     currentTab:"all",
     orderListall:[],
+    riderListall:[],
     selectedItem: null
   },
   changeTab: function (e) {
@@ -23,6 +24,15 @@ Page({
           orderListall:data.data,
         });
         console.log("骑手端：",this.data.orderListall);
+      }
+    );
+    test.get_yijie(
+      (data)=>{
+        console.log("返回的已接订单",data.data);
+        this.setData({
+          riderListall:data.data,
+        });
+        console.log("已接订单：",this.data.riderListall);
       }
     );
   },
@@ -58,6 +68,15 @@ Page({
         console.log("骑手端：",this.data.orderListall);
       }
     );
+    test.get_yijie(
+      (data)=>{
+        console.log("返回的已接订单",data.data);
+        this.setData({
+          riderListall:data.data,
+        });
+        console.log("已接订单：",this.data.riderListall);
+      }
+    );
   },
 
   /**
@@ -84,9 +103,19 @@ Page({
         this.setData({
           orderListall:data.data,
         });
-        console.log("我们成功定义了信息：",this.data.orderListall);
+        console.log("刷新：",this.data.orderListall);
       }
     );
+    test.get_yijie(
+      (data)=>{
+        console.log(data.data);
+        this.setData({
+          orderListall:data.data,
+        });
+        console.log("已接订单：",this.data.orderListall);
+      }
+    );
+    
   },
 
   /**
@@ -135,7 +164,25 @@ Page({
       fail(error) {
         console.error('请求失败:', error);
       }
-    })
+    });
+    test.get_rider_order(
+      (data)=>{
+        console.log("@@@",data.data);
+        this.setData({
+          orderListall:data.data,
+        });
+        console.log("骑手端：",this.data.orderListall);
+      }
+    );
+    test.get_yijie(
+      (data)=>{
+        console.log("返回的已接订单",data.data);
+        this.setData({
+          riderListall:data.data,
+        });
+        console.log("已接订单：",this.data.riderListall);
+      }
+    );
   }
 
 })
