@@ -89,7 +89,7 @@ Page({
     let temp_id=wx.getStorageSync('user_id');
     let temp_address=wx.getStorageSync('user_info');
     wx.request({
-      url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/user/order',
+      url: 'http://localhost:8080/user/order',
       method:'POST',
       data:{
         typeService:"代寄快递",

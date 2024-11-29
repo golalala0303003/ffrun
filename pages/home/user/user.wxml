@@ -5,6 +5,7 @@
       <image class="user_image" src="/static/user_icon/初音未来-大笑.png"> </image>
       <text class="user_name flex">{{user_name}}</text>
       <text class="user_phone flex">{{user_phone}}</text>
+      <text class="user_phone flex">用户评分：{{user_Star}}</text>
     </view>
   </view>
   <view class="s2" bindtap="onTapkefu">

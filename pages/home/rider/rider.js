@@ -147,11 +147,12 @@ Page({
 
    jiedan:function(e)
   {
+      let that=this;
     const orderId = e.currentTarget.dataset.order_id;
     console.log("------------",e.currentTarget);
     const riderId = wx.getStorageSync('user_info').userId;
     wx.request({
-      url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/user/rider/accept',
+      url: 'http://localhost:8080/user/rider/accept',
       method:'PUT',
       data:{
         orderId:orderId,
@@ -159,6 +160,18 @@ Page({
       },
       success(res) {
         console.log('请求成功:', res.statusCode);
+        test.get_rider_order(
+            (data)=>{
+                if(data){
+                    console.log(data.data);
+                    that.setData({
+                        orderListall:data.data,
+                    });
+                    console.log("刷新：",that.data.orderListall);
+                }
+                    
+            }
+          );
       },
       fail(error) {
         console.error('请求失败:', error);

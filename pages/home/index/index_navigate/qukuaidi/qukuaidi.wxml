@@ -12,7 +12,7 @@
       <view class="pay_item_form_time">
         <view class="pay_item_font" style="position: relative; left: 10rpx; top: 0rpx; width: 680rpx; display: block; box-sizing: border-box">选择接受配送时间</view>
         <view class="pay_checkbox">
-          <input name="deliverTime" style="position: relative; left: 10rpx; top: 0rpx; width: 680rpx; display: block; box-sizing: border-box" placeholder="请输入配送时间"/>
+          <input name="deliverTime" style="position: relative; left: 10rpx; top: 0rpx; width: 680rpx; display: block; box-sizing: border-box" placeholder="请输入配送时间（严格遵照格式）"/>
         </view>
         <view class="divider"></view>
       </view>

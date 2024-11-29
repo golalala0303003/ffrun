@@ -50,7 +50,7 @@ Page({
     console.log("user_id是",id_temp);
     console.log("开始读取该用户信息");
     wx.request({
-      url: `http://127.0.0.1:4523/m1/5470558-5146069-default/user/user/${id_temp}`,
+      url: `http://localhost:8080/user/user/${id_temp}`,
       success(res){
         if(res.statusCode===200){
           console.log("成功读取该用户信息");

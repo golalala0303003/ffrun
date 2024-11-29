@@ -7,6 +7,7 @@ Page({
   data: {
     user_name:"",
     user_phone:"",
+    user_Star:0,
     user_account:0,
     user_ticket:0,
     mutifunc:[
@@ -82,7 +83,8 @@ Page({
       user_name:wx.getStorageSync('user_info').username,
       user_phone:wx.getStorageSync('user_info').phone,
       user_account:wx.getStorageSync('user_info').account,
-      user_ticket:wx.getStorageSync('user_info').ticketList.length
+      user_ticket:wx.getStorageSync('user_info').ticketList.length,
+      user_Star:wx.getStorageSync('user_info').userStar
     });
     console.log("新的数据已经被更新");
   },
@@ -94,7 +96,7 @@ Page({
     let id_temp=wx.getStorageSync('user_id')
     console.log("开始读取该用户信息");
     wx.request({
-      url: `http://127.0.0.1:4523/m1/5470558-5146069-default/user/user/${id_temp}`,
+      url: `http://localhost:8080/user/user/${id_temp}`,
       success(res){
         if(res.statusCode===200){
           console.log("成功读取该用户信息");
