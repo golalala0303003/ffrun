@@ -5,26 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    msg1:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-    const itemStr = options.item;
-    if (itemStr) { // 确保 itemStr 不是 undefined
-      try {
-        const item = JSON.parse(decodeURIComponent(itemStr));
-        this.setData({
-          selectedItem: item
-        });
-      } catch (error) {
-        console.error("解析 JSON 出错:", error);
-      }
-    } else {
-      console.log("未接收到有效的数据");
-    }
+  onLoad(){
+
   },
 
   /**
@@ -38,7 +26,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.setData({msg1:wx.getStorageSync('temp_trans_index1')})
   },
 
   /**

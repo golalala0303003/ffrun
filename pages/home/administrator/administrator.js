@@ -21,6 +21,21 @@ Page({
     this.setData({
       currentTab: type,
     });
+    const that=this;
+    wx.request({
+      url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/admin/order',
+      success(res){
+        if(res.statusCode===200){
+          console.log("订单测试成功"),
+          console.log(res.data.data),
+          that.setData({
+            orderListall:res.data.data
+          })
+          }
+          else
+          console.log("订单测试失败")
+        }
+    });
     console.log("change to",type);
   },
   /**
@@ -81,7 +96,21 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide() {
-
+    const that=this;
+    wx.request({
+      url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/admin/order',
+      success(res){
+        if(res.statusCode===200){
+          console.log("订单测试成功"),
+          console.log(res.data.data),
+          that.setData({
+            orderListall:res.data.data
+          })
+          }
+          else
+          console.log("订单测试失败")
+        }
+    });
   },
 
   /**
@@ -113,33 +142,25 @@ Page({
   },
 
   checkod: function(e) {
-    const orderId = e.currentTarget.dataset.orderId;
-    const item = this.data.orderListall.find(i => i.order_id === orderId);
-    if (item) { // 确保找到了项
-      this.setData({
-        selectedItem: item
-      });
-      wx.navigateTo({
-        url: `/pages/home/administrator/order_temp/order_temp?item=${encodeURIComponent(JSON.stringify(item))}`
-      });
-    } else {
-      console.log('未找到对应的订单项');
-    }
+    let temp_index = e.currentTarget.dataset.index;
+    console.log("index:",temp_index);
+    console.log(this.data.orderListall[temp_index]);
+    wx.setStorageSync('temp_trans_index', this.data.orderListall[temp_index]);
+    //console.log()
+    wx.navigateTo({
+      url: '/pages/home/administrator/order_temp/order_temp',
+    })
   },
 
   checkus: function(e) {
-    const userId = e.currentTarget.dataset.userId;
-    const item = this.data.userListall.find(i => i.user_id === userId);
-    if (item) { // 确保找到了项
-      this.setData({
-        selectedItem: item
-      });
-      wx.navigateTo({
-        url: `/pages/home/administrator/user_temp/user_temp?item=${encodeURIComponent(JSON.stringify(item))}`
-      });
-    } else {
-      console.log('未找到对应的订单项');
-    }
+    let temp_index1 = e.currentTarget.dataset.index1;
+    console.log("index1:",temp_index1);
+    console.log(this.data.userListall[temp_index1]);
+    wx.setStorageSync('temp_trans_index1', this.data.userListall[temp_index1]);
+    //console.log()
+    wx.navigateTo({
+      url: '/pages/home/administrator/user_temp/user_temp',
+    })
   }
 
 })

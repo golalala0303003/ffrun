@@ -84,11 +84,13 @@ Page({
       user_account:wx.getStorageSync('user_info').account,
       user_ticket:wx.getStorageSync('user_info').ticketList.length
     });
+    console.log("新的数据已经被更新");
   },
   /**
    * 生命周期函数--监听页面显示
    */
   get_userinfo(){
+    let that=this;
     let id_temp=wx.getStorageSync('user_id')
     console.log("开始读取该用户信息");
     wx.request({
@@ -99,6 +101,7 @@ Page({
           console.log("这个是user_info",res.data.data);
           wx.setStorageSync('user_info', res.data.data);
           console.log("成功存储用户信息");
+          that.loadinfo();
         }
         else{
           console.log("信息读取失败");
@@ -109,7 +112,7 @@ Page({
   },
   onShow() {
     this.get_userinfo();
-    this.loadinfo();
+    
   },
 
   /**

@@ -62,7 +62,7 @@
 }
 
 .startEnd{
-  height: 700rpx;
+  height: 1200rpx;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;

@@ -2,31 +2,31 @@
 <view class="orderContainer">
   <view class="orderForm">
       <view class="basicData">
-        <view class="typeService">{{selectedItem.typeService}}</view>
-        <view class="numService">{{selectedItem.orderId}}</view>
+        <view class="typeService">{{msg.typeService}}</view>
+        <view class="numService">{{msg.orderId}}</view>
         <view class="typeDoneyet">
-        <text wx:if="{{selectedItem.status === 0}}">待接单</text>
-        <text wx:elif="{{selectedItem.status === 1}}">进行中</text>
-        <text wx:else="{{selectedItem.status === 2}}">已完成</text></view>
+        <text wx:if="{{msg.status === 0}}">待接单</text>
+        <text wx:elif="{{msg.status === 1}}">进行中</text>
+        <text wx:else="{{msg.status === 2}}">已完成</text></view>
       </view>
       <view class="divider"></view>
       <view class="startEnd">
         <view class="desTination">
           <image class="desImage" src="/static/order_icon/起点.png"></image>
-          <text>{{selectedItem.orderAddress}}</text>
+          <text>{{msg.orderAddress}}</text>
         </view>
         <view class="desTination">
           <image class="desImage" src="/static/order_icon/终点.png"></image>
-          <text>{{selectedItem.deliveryAddress}}</text>
+          <text>{{msg.deliveryAddress}}</text>
         </view>
-        <view class="block"><text>配送时间:{{selectedItem.deliveryTime}}</text></view>
-        <view class="brock"><text>用户ID:{{selectedItem.userId}}</text></view>
-        <view class="bock"><text>备注:{{selectedItem.description}}</text></view>
-        <view class="block"><text>骑手ID:{{selectedItem.riderId}}</text></view>
-        <view class="brock" wx:if="{{selectedItem.orderTime !== undefined && selectedItem.orderTime !== null && selectedItem.orderTime !== ''}}"><text>送达时间:{{selectedItem.orderTime}}</text></view>
-        <view class="brock" wx:if="{{selectedItem.orderStar !== undefined && selectedItem.orderStar !== null && selectedItem.orderStar !== ''}}"><text>订单评分:{{selectedItem.orderStar}}</text></view>
-        <view class="brock" wx:if="{{selectedItem.createUser !== undefined && selectedItem.createUser !== null && selectedItem.createUser !== ''}}"><text>创建人:{{selectedItem.createUser}}</text></view>
-        <view class="brock" wx:if="{{selectedItem.createTime !== undefined && selectedItem.createTime !== null && selectedItem.createTime !== ''}}"><text>创建时间:{{selectedItem.createTime}}</text></view>
+        <view class="block"><text>配送时间:{{msg.deliveryTime}}</text></view>
+        <view class="brock"><text>用户ID:{{msg.userId}}</text></view>
+        <view class="bock"><text>备注:{{msg.description}}</text></view>
+        <view class="block"><text>骑手ID:{{msg.riderId}}</text></view>
+        <view class="brock" wx:if="{{msg.orderTime !== undefined && msg.orderTime !== null && msg.orderTime !== ''}}"><text>送达时间:{{msg.orderTime}}</text></view>
+        <view class="brock" wx:if="{{msg.orderStar !== undefined && msg.orderStar !== null && msg.orderStar !== ''}}"><text>订单评分:{{msg.orderStar}}</text></view>
+        <view class="brock" wx:if="{{msg.createUser !== undefined && msg.createUser !== null && msg.createUser !== ''}}"><text>创建人:{{msg.createUser}}</text></view>
+        <view class="brock" wx:if="{{msg.createTime !== undefined && msg.createTime !== null && msg.createTime !== ''}}"><text>创建时间:{{msg.createTime}}</text></view>
       </view>
     </view>
 </view>

@@ -29,7 +29,7 @@
       </view>
       <view class="divider"></view>
       <view class="buTTons">
-        <text class="buTTon" bind:tap="jmpod" data-orderId="{{item.orderId}}">查询</text>
+        <text class="buTTon" bind:tap="jmpod" data-index="{{index}}">查询</text>
         <text class="buTTon" bind:tap="jiedan" data-order_id="{{item.orderId}}">接单</text>
       </view>
     </view>
@@ -59,7 +59,7 @@
       </view>
       <view class="divider"></view>
       <view class="buTTons">
-        <text class="buTTon" bind:tap="jmpod" data-orderId="{{item.orderId}}">查询</text>
+        <text class="buTTon" bind:tap="jmpod" data-index="{{index}}">查询</text>
       </view>
     </view>
   </view>

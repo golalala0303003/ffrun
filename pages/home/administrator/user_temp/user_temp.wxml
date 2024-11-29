@@ -1,21 +1,21 @@
 <view class="orderForm">
       <view class="basicData">
-        <view class="typeService">{{selectedItem.userId}}</view>
-        <view class="numService">{{selectedItem.username}}</view>
-        <view class="typeDoneyet">{{selectedItem.userStar}}</view>
+        <view class="typeService">{{msg1.userId}}</view>
+        <view class="numService">{{msg1.username}}</view>
+        <view class="typeDoneyet">{{msg1.userStar}}</view>
       </view>
       <view class="divider"></view>
       <view class="startEnd">
         <view class="desTination">
           <image class="desImage" src="/static/order_icon/起点.png"></image>
-          <text>用户地址:{{selectedItem.userAddress}}</text>
+          <text>用户地址:{{msg1.userAddress}}</text>
         </view>
-        <view class="block"><text>账户余额:{{selectedItem.account}}</text></view>
-        <view class="block"><text>用户电话:{{selectedItem.phone}}</text></view>
-        <view class="block"><text>用户评分:{{selectedItem.userStar}}</text></view>
-        <view class="block"><text>未完成订单数:{{selectedItem.orderNNum}}</text></view>
-        <view class="block"><text>已完成订单数:{{selectedItem.orderNum}}</text></view>
-        <view  class="block" wx:for="{{selectedItem.ticketList}}" wx:key="index"> 
+        <view class="block"><text>账户余额:{{msg1.account}}</text></view>
+        <view class="block"><text>用户电话:{{msg1.phone}}</text></view>
+        <view class="block"><text>用户评分:{{msg1.userStar}}</text></view>
+        <view class="block"><text>未完成订单数:{{msg1.orderNNum}}</text></view>
+        <view class="block"><text>已完成订单数:{{msg1.orderNum}}</text></view>
+        <view  class="block" wx:for="{{msg1.ticketList}}" wx:key="index"> 
           <view ><text>卡券名称:{{item.ticketName}}</text></view>
           <view ><text>卡券数量:{{item.ticketSum}}</text></view>
           <view ><text>卡券面额:{{item.ticketAccount}}</text></view>

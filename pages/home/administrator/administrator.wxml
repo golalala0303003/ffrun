@@ -24,7 +24,7 @@
       </view>
       <view class="divider"></view>
       <view class="buTTons">
-        <text class="buTTon" bind:tap="checkod" data-order_id="{{item.orderId}}">查询</text>
+        <text class="buTTon" bind:tap="checkod" data-index="{{index}}">查询</text>
       </view>
     </view>
   </view>
@@ -47,7 +47,7 @@
       </view>
       <view class="divider"></view>
       <view class="buTTons">
-        <text class="buTTon" bind:tap="checkus" data-userId="{{item.user_id}}">查询</text>
+        <text class="buTTon" bind:tap="checkus" data-index1="{{index}}">查询</text>
       </view>
     </view>
   </view>

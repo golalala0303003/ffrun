@@ -90,7 +90,9 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload() {
-
+    this.setData({
+      selectedItem: null
+    });
   },
 
   /**
@@ -133,21 +135,17 @@ Page({
   },
 
   jmpod: function(e) {
-    const orderId = e.currentTarget.dataset.order_id;
-    const item = this.data.orderListall.find(i => i.order_id === orderId);
-    if (item) { 
-      this.setData({
-        selectedItem: item
-      });
-      wx.navigateTo({
-        url: `/pages/home/rider/Order_detail/Order_detail?item=${encodeURIComponent(JSON.stringify(item))}`
-      });
-    } else {
-      console.log('未找到对应的订单项');
-    }
+    let temp_index = e.currentTarget.dataset.index;
+    console.log("index:",temp_index);
+    console.log(this.data.orderListall[temp_index]);
+    wx.setStorageSync('temp_trans_index', this.data.orderListall[temp_index]);
+    //console.log()
+    wx.navigateTo({
+      url: '/pages/home/rider/Order_detail/Order_detail',
+    })
   },
 
-  jiedan:function(e)
+   jiedan:function(e)
   {
     const orderId = e.currentTarget.dataset.order_id;
     console.log("------------",e.currentTarget);
@@ -166,24 +164,7 @@ Page({
         console.error('请求失败:', error);
       }
     });
-    test.get_rider_order(
-      (data)=>{
-        console.log("@@@",data.data);
-        this.setData({
-          orderListall:data.data,
-        });
-        console.log("骑手端：",this.data.orderListall);
-      }
-    );
-    test.get_yijie(
-      (data)=>{
-        console.log("返回的已接订单",data.data);
-        this.setData({
-          riderListall:data.data,
-        });
-        console.log("已接订单：",this.data.riderListall);
-      }
-    );
+    
   }
 
 })
