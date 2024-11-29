@@ -27,7 +27,8 @@
     "pages/home/administrator/order_temp/order_temp",
     "pages/home/entry_p/entry_p",
     "pages/home/entry_p/oldLogin/oldLogin",
-    "pages/home/order/order_Done/order_Done"
+    "pages/home/order/order_Done/order_Done",
+    "pages/home/runleghelp/test111/test111"
   ],
   "window": {
     "navigationBarTextStyle": "black",

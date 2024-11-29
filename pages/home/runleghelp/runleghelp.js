@@ -1,7 +1,21 @@
-import test from '../../../data/test/test'
 Page({
   data: {
-    list:[]
+    items: [
+      {x:"a1",y:"a2"},
+      {x:"b1",y:"b2"},
+      {x:"c1",y:"c2"},
+      {x:"d1",y:"d2"},
+      {x:"e1",y:"e2"},
+
+    ]
+  },
+  handleTap(e){
+    let temp_index=e.currentTarget.dataset.index;
+    console.log(e.currentTarget);
+    wx.setStorageSync('temp_trans_index', this.data.items[temp_index]);
+    wx.navigateTo({
+      url: '/pages/home/runleghelp/test111/test111',
+    })
   },
   /**
    * 生命周期函数--监听页面加载

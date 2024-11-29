@@ -1,2 +1,5 @@
-<view>欢迎来到跑腿小程序</view>
-<view>这里是帮助</view>
+<view wx:for="{{items}}" wx:key="index" >
+  <view data-index="{{index}}" bindtap="handleTap">
+    <text>内容: {{item.x}}{{item.y}}</text>
+  </view>  
+</view>

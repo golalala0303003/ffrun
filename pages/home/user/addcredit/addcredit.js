@@ -8,10 +8,22 @@ Page({
     uncommit_account:0
   },
   formSubmit:function(e){
-    console.log(e.detail.value.input);
+    console.log("这是输入的数值",e.detail.value.input);
+    
     let temp_account=wx.getStorageSync('user_info');
+    
+    let origin_account=parseInt(temp_account.account);
+    console.log("这个是原来的账户数值",origin_account);
+    
+    
+    let add_account=parseInt(e.detail.value.input);
+    console.log("这个是要加的值",add_account);
+
+    let final=origin_account+add_account;
+    console.log("新的用户余额为",final);
+
     this.setData({
-      uncommit_account:parseInt(e.detail.value.input)+parseInt(temp_account.account)
+      uncommit_account:final
     },()=>{
       this.user_register();
     }  );
@@ -41,6 +53,9 @@ Page({
       success(res){
         if(res.statusCode===200){
           console.log("注册/更新数据成功");
+          wx.switchTab({
+            url: '/pages/home/user/user',
+          })
           that.get_userinfo();
         }
         else{

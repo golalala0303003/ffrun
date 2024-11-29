@@ -1,0 +1,2 @@
+<!--pages/home/runleghelp/test111/test111.wxml-->
+<view>{{msg.x}}{{msg.y}}</view>
