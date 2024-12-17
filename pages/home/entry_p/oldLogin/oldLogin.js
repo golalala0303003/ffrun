@@ -11,7 +11,7 @@ Page({
     let that=this;
     let temp_name=this.data.login_name;
     wx.request({
-      url: 'http://localhost:8080/user/user/login',
+      url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/user/user/login',
       method: 'POST',
       data:{
         username:temp_name

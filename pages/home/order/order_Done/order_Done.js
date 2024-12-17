@@ -16,7 +16,7 @@ Page({
 
     // console.log(temp_object.order_id);
     wx.request({
-      url: 'http://localhost:8080/user/order',
+      url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/user/order',
       method:'PUT',
       data:{
         orderId: this.data.temp_order.orderId,

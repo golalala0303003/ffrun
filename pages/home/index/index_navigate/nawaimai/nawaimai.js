@@ -89,7 +89,7 @@ Page({
     let temp_id=wx.getStorageSync('user_id');
     let temp_address=wx.getStorageSync('user_info');
     wx.request({
-      url: 'http://localhost:8080/user/order',
+      url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/user/order',
       method:'POST',
       data:{
         typeService:"代拿外卖",
@@ -111,18 +111,35 @@ Page({
 
   formSubmit(e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
-    this.setData({
-      deliverTime:e.detail.value.deliverTime,
-      description:e.detail.value.add,
-      couponspick:e.detail.value.couponspick,
-      tipspick:e.detail.value.tipspick
-    });
-    console.log("开始提交订单");
-    //console.log("这是订单信息：",this.data.deliverTime,this.data.description);
-    this.create_order();
-    /*wx.navigateTo({
-      url: '/pages/home/commit_success/commit_success',
-    })*/
+    if(e.detail.value.deliverTime==""){
+      wx.showToast({
+        title: '没填时间',
+        icon:'error',
+        duration:2000
+      })
+    }
+    else if(e.detail.value.add==""){
+      wx.showToast({
+        title: '没填信息',
+        icon:'error',
+        duration:2000
+      })
+    }
+    else{
+      this.setData({
+        deliverTime:e.detail.value.deliverTime,
+        description:e.detail.value.add,
+        couponspick:e.detail.value.couponspick,
+        tipspick:e.detail.value.tipspick
+      });
+      console.log("开始提交订单");
+      //console.log("这是订单信息：",this.data.deliverTime,this.data.description);
+      this.create_order();
+      /*wx.navigateTo({
+        url: '/pages/home/commit_success/commit_success',
+      })*/
+    }
+      
   },
 
 

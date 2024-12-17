@@ -18,20 +18,47 @@ Page({
   },
   formSubmit:function(e){
     console.log(e.detail.value);
-    this.setData( {
-      uncommit_name:e.detail.value.user_name,
-      uncommit_phone:e.detail.value.user_phone,
-      uncommit_address:e.detail.value.user_address
-    } ,  ()=>{
-      this.user_register();
-    });
+    if(e.detail.value.user_name==""){
+      console.log("没填！！！！！！！！！！！！！！！！！！！！！");
+      wx.showToast({
+        title: '无昵称',
+        icon: 'error',
+        duration: 2000//持续的时间
+      })
+    }
+    else if(e.detail.value.user_phone==""){
+      console.log("没填！！！！！！！！！！！！！！！！！！！！！");
+      wx.showToast({
+        title: '无电话',
+        icon: 'error',
+        duration: 2000//持续的时间
+      })
+    }
+    else if(e.detail.value.user_address==""){
+      console.log("没填！！！！！！！！！！！！！！！！！！！！！");
+      wx.showToast({
+        title: '无地址',
+        icon: 'error',
+        duration: 2000//持续的时间
+      })
+    }
+    else{
+      this.setData( {
+        uncommit_name:e.detail.value.user_name,
+        uncommit_phone:e.detail.value.user_phone,
+        uncommit_address:e.detail.value.user_address
+      } ,  ()=>{
+        this.user_register();
+      });
+    }
+    
     
   },
   get_userinfo(){
     let id_temp=wx.getStorageSync('user_id')
     console.log("开始读取该用户信息");
     wx.request({
-      url: `http://localhost:8080/user/user/${id_temp}`,
+      url: `http://127.0.0.1:4523/m1/5470558-5146069-default/user/user/${id_temp}`,
       success(res){
         if(res.statusCode===200){
           console.log("成功读取该用户信息");
@@ -54,7 +81,7 @@ Page({
     //console.log("test是否更改",that.data.uncommit_address);
     console.log("获取到当前userinfo",temp_info);
     wx.request({
-      url: 'http://localhost:8080/user/user',
+      url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/user/user',
       method:'PUT',
       data:{
         userId: temp_id,

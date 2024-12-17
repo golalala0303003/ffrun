@@ -36,7 +36,7 @@ Page({
     //console.log("test是否更改",that.data.uncommit_address);
     //console.log("获取到当前userinfo",temp_info);
     wx.request({
-      url: 'http://localhost:8080/user/user',
+      url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/user/user',
       method:'PUT',
       data:{
         userId: temp_id,
@@ -69,7 +69,7 @@ Page({
     let id_temp=wx.getStorageSync('user_id')
     console.log("开始读取该用户信息");
     wx.request({
-      url: `http://localhost:8080/user/user/${id_temp}`,
+      url: `http://127.0.0.1:4523/m1/5470558-5146069-default/user/user/${id_temp}`,
       success(res){
         if(res.statusCode===200){
           console.log("成功读取该用户信息");

@@ -3,7 +3,7 @@ export default{
     let id_temp=wx.getStorageSync('user_id');
     console.log("这是userid",id_temp);
     wx.request({
-      url: `http://localhost:8080/user/order/${id_temp}`,
+      url: `http://127.0.0.1:4523/m1/5470558-5146069-default/user/order/${id_temp}`,
       dataType:'json',
       success(res){
         console.log("respond data=",res);
@@ -14,7 +14,7 @@ export default{
 
   get_rider_order(callback){
     wx.request({
-      url: 'http://localhost:8080/user/rider/order',
+      url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/user/rider/order',
       dataType:'json',
       success(res){
         console.log("respond data=",res);
@@ -25,7 +25,7 @@ export default{
 
   get_AD_order(callback){
     wx.request({
-      url: 'http://localhost:8080/admin/order',
+      url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/admin/order',
       dataType:'json',
       success(res){
         console.log("respond data=",res);
@@ -36,7 +36,7 @@ export default{
 
   get_AD_user(callback){
     wx.request({
-      url: 'http://localhost:8080/admin/user',
+      url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/admin/user',
       method:'GET',
       success(res){
         console.log("666",res.data.data);
@@ -49,7 +49,7 @@ export default{
     let id_temp=wx.getStorageSync('user_id');
     console.log("这是userid",id_temp);
     wx.request({
-      url: `http://localhost:8080/user/rider/${id_temp}`,
+      url: `http://127.0.0.1:4523/m1/5470558-5146069-default/user/rider/${id_temp}`,
       dataType:'json',
       success(res){
         console.log("respond data=",res);

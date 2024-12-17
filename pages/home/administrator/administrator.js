@@ -23,7 +23,7 @@ Page({
     });
     const that=this;
     wx.request({
-      url: 'http://localhost:8080/admin/order',
+      url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/admin/order',
       success(res){
         if(res.statusCode===200){
           console.log("订单测试成功"),
@@ -58,7 +58,7 @@ Page({
   onShow() {
     const that=this;
     wx.request({
-      url: 'http://localhost:8080/admin/order',
+      url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/admin/order',
       success(res){
         if(res.statusCode===200){
           console.log("订单测试成功"),
@@ -73,7 +73,7 @@ Page({
     });
     
     wx.request({
-      url: 'http://localhost:8080/admin/user',
+      url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/admin/user',
       success(res){
         if(res.statusCode===200){
           console.log("用户测试成功"),
@@ -98,7 +98,7 @@ Page({
   onHide() {
     const that=this;
     wx.request({
-      url: 'http://localhost:8080/admin/order',
+      url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/admin/order',
       success(res){
         if(res.statusCode===200){
           console.log("订单测试成功"),

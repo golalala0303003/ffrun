@@ -23,7 +23,7 @@ Page({
     code_temp=wx.getStorageSync('user_login_code');
     //console.log("从缓存中调用code",code_temp);
     wx.request({
-      url: 'http://localhost:8080/user/user/register',
+      url: 'http://127.0.0.1:4523/m1/5470558-5146069-default/user/user/register',
       method: 'POST',
       data:{
         code:code_temp
@@ -53,7 +53,7 @@ Page({
     let id_temp=wx.getStorageSync('user_id')
     console.log("开始读取该用户信息");
     wx.request({
-      url: `http://localhost:8080/user/user/${id_temp}`,
+      url: `http://127.0.0.1:4523/m1/5470558-5146069-default/user/user/${id_temp}`,
       success(res){
         if(res.statusCode===200){
           console.log("成功读取该用户信息");
