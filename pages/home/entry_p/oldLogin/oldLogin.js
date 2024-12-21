@@ -29,6 +29,13 @@ Page({
             url: '/pages/home/index/index',
           })
         }
+        else if(res.statusCode===0){
+          wx.showToast({
+            title: '不存在',
+            icon:'error',
+            duration:2000
+          })
+        }
         else{
           console.log("登录失败，不存在该用户");
         }

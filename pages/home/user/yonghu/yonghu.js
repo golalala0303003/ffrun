@@ -66,6 +66,13 @@ Page({
           wx.setStorageSync('user_info', res.data.data);
           console.log("成功存储用户信息");
         }
+        else if(res.statusCode===0){
+          wx.showToast({
+            title: '已存在',
+            icon:'error',
+            duration:2000
+          })
+        }
         else{
           console.log("信息读取失败");
         }
